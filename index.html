@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZeroFy | Web Development, Deployment & Maintenance</title>
+  <meta name="description" content="ZeroFy builds fast, modern websites with easy deployment and reliable maintenance for businesses and individuals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="page-transition" class="page-transition" aria-hidden="true"></div>
+
+  <div id="page-loader" class="page-loader" aria-hidden="true">
+    <div class="loader-card">
+      <div class="loader-ring"></div>
+      <p>Loading ZeroFy</p>
+    </div>
+  </div>
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div class="container cookie-banner__inner">
+      <p>This site uses cookies to improve your experience and understand basic usage. We do not sell your personal data.</p>
+      <div class="cookie-actions">
+        <button id="cookie-deny" class="button button-secondary">Deny</button>
+        <button id="cookie-accept" class="button button-primary">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">ZeroFy</a>
+      <button class="mobile-nav-toggle" aria-controls="site-navigation" aria-expanded="false">Menu</button>
+      <nav id="site-navigation" class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <!-- <a href="zlog.html">Zlog</a> -->
+        <!-- <a href="zorum.html">Zorum</a> -->
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-light">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="pricing-banner" aria-label="Starting price banner">
+            Starting at <strong>₹5,999/-</strong>
+          </div>
+          <p class="eyebrow">Digital service for small business</p>
+          <h1>Your website, built and maintained with clarity.</h1>
+          <p class="copy">ZeroFy makes web development simple and accessible for every business and creator. Launch a modern site, stay secure, and grow with confidence.</p>
+          <div class="hero-actions">
+            <a href="contact.html" class="button button-primary">Get started</a>
+            <a href="about.html" class="button button-secondary">Learn more</a>
+          </div>
+        </div>
+        <div class="hero-card reveal">
+          <div class="hero-visual" aria-hidden="true">
+            <div class="browser-window">
+              <div class="browser-top">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="browser-body">
+                <div class="preview-panel">
+                  <h3>ZeroFy Studio</h3>
+                  <p>Launch faster with clarity.</p>
+                  <div class="mini-bars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="preview-stack">
+                  <div class="mini-card">Design</div>
+                  <div class="mini-card accent">Deploy</div>
+                  <div class="mini-card">Maintain</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">What ZeroFy offers</p>
+          <h2>Simple services for modern websites</h2>
+        </div>
+        <div class="card-grid">
+          <article class="service-card reveal">
+            <h3>Website development</h3>
+            <p>Custom pages and workflow built with usability, fast loading, and accessibility in mind.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Deployment support</h3>
+            <p>GitHub, hosting, and continuous deployment setup to keep your site live and stable.</p>
+          </article>
+          <article class="service-card reveal">
+            <h3>Maintenance plans</h3>
+            <p>Keep your website secure and updated, with clear guidance and hands-on support.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light" id="quick-links">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Quick links</p>
+          <h2>Find what you need fast</h2>
+        </div>
+        <div class="link-grid">
+          <a href="about.html" class="link-card reveal">
+            <h3>About ZeroFy</h3>
+            <p>Learn our mission, values, and how we keep work simple.</p>
+          </a>
+          <a href="zlog.html" class="link-card reveal">
+            <h3>Read the Zlog</h3>
+            <p>Explore our latest ideas on website strategy, design, and deployment.</p>
+          </a>
+          <a href="contact.html" class="link-card reveal">
+            <h3>Reach out</h3>
+            <p>Ask a question or request a free consultation.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span data-current-year></span> <span class="company-name">Marandi Internet Private Limited</span>. ZeroFy. Simple website solutions for businesses and creators.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <!-- <a href="zlog.html">Zlog</a> -->
+        <!-- <a href="zorum.html">Zorum</a> -->
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

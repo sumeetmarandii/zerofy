@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found | ZeroFy</title>
+  <meta name="description" content="The page you are looking for cannot be found. Return to the ZeroFy homepage." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="page-transition" class="page-transition" aria-hidden="true"></div>
+
+  <main class="section-light">
+    <section class="hero" style="padding: 6rem 0;">
+      <div class="container" style="text-align:center;">
+        <p class="eyebrow">404</p>
+        <h1>Page not found</h1>
+        <p class="copy" style="margin-left:auto; margin-right:auto;">The page you tried to reach does not exist or may have moved. Use the link below to return home.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a href="index.html" class="button button-primary" id="return-home">Back to ZeroFy</a>
+          <a href="contact.html" class="button button-secondary">Contact us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const returnHomeLink = document.getElementById('return-home');
+    if (returnHomeLink) {
+      returnHomeLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        localStorage.removeItem('zerofy-cookie-consent');
+        window.location.href = 'index.html';
+      });
+    }
+  </script>
+</body>
+</html>

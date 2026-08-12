@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | ZeroFy</title>
+  <meta name="description" content="Contact ZeroFy for website development, deployment, and maintenance services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="page-transition" class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">ZeroFy</a>
+      <button class="mobile-nav-toggle" aria-controls="site-navigation" aria-expanded="false">Menu</button>
+      <nav id="site-navigation" class="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <!-- <a href="zlog.html">Zlog</a> -->
+        <!-- <a href="zorum.html">Zorum</a> -->
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-light">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">Get in touch</p>
+          <h1>Questions, project requests, or feedback?</h1>
+          <p class="copy">Send a short message and we’ll follow up with a clear next step.</p>
+          <div class="hero-actions">
+            <a href="mailto:hello@zerofy.me" class="button button-primary">Email us</a>
+            <a href="about.html" class="button button-secondary">Learn our process</a>
+          </div>
+        </div>
+        <div class="hero-card reveal">
+          <div class="hero-visual" aria-hidden="true">
+            <div class="browser-window">
+              <div class="browser-top">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="browser-body">
+                <div class="preview-panel">
+                  <h3>Contact</h3>
+                  <p>Start a conversation with ZeroFy.</p>
+                </div>
+                <div class="preview-stack">
+                  <div class="mini-card">Email</div>
+                  <div class="mini-card accent">Reply</div>
+                  <div class="mini-card">Plan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <h2>Contact details</h2>
+          <p>Drop us a message if you want a new website, a deployment review, or ongoing maintenance support.</p>
+          <ul>
+            <li><strong>Address:</strong> SP Colony, Dibdih, Ranchi, Jharkhand - 834002</li>
+            <li><strong>Email:</strong> <a href="mailto:hello.zerofy@gmail.com">hello.zerofy@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+918789500326" target="_blank">+91 8789 500326</a></li>
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/918987958804" target="_blank">+91 89879 58804</a></li>
+          </ul>
+          <p>You can always DM us on Instagram♥️.</p>
+        </div>
+        <form class="contact-form reveal" action="https://formsubmit.co/hello.zerofy@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="New ZeroFy Contact Form Submission" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://example.com" />
+
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Tell us what you need..." required></textarea>
+
+          <button type="submit" class="button button-primary">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="success-popup" id="success-popup" role="status" aria-live="polite">
+    <span class="success-popup__icon">✓</span>
+    <span>Thank you! Your message has been sent.</span>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span data-current-year></span> <span class="company-name">Marandi Internet Private Limited</span>. ZeroFy. Simple website solutions for businesses and creators.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <!-- <a href="zlog.html">Zlog</a> -->
+        <!-- <a href="zorum.html">Zorum</a> -->
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

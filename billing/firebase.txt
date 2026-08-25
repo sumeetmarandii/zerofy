@@ -1,0 +1,23 @@
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCR4s-IUbcU-TugTSjMQJ0st9oF4ijwfkg",
+    authDomain: "zerofy-c941e.firebaseapp.com",
+    projectId: "zerofy-c941e",
+    storageBucket: "zerofy-c941e.firebasestorage.app",
+    messagingSenderId: "721022317759",
+    appId: "1:721022317759:web:4b336cde07d2805af9420a",
+    measurementId: "G-FT35GHMJS3"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>

@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS zerofy_billing CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE zerofy_billing;
+
+CREATE TABLE IF NOT EXISTS users (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(120) NOT NULL,
+	email VARCHAR(190) NOT NULL UNIQUE,
+	password_hash VARCHAR(255) NOT NULL,
+	plan ENUM('free', 'paid') NOT NULL DEFAULT 'free',
+	custom_header VARCHAR(160) NULL,
+	hide_header TINYINT(1) NOT NULL DEFAULT 0,
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS invoices (
+	id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	user_id INT UNSIGNED NULL,
+	invoice_number VARCHAR(40) NOT NULL,
+	customer_name VARCHAR(160) NOT NULL,
+	invoice_date DATE NULL,
+	currency CHAR(3) NOT NULL DEFAULT 'INR',
+	total DECIMAL(14,2) NOT NULL DEFAULT 0,
+	invoice_data JSON NOT NULL,
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	UNIQUE KEY unique_user_invoice (user_id, invoice_number),
+	CONSTRAINT invoices_user_fk FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB;

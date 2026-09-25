@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="pixel" data-mode="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff3d6" />
+  <title>Demo Site 3 &mdash; Pixel art | ZeroFy</title>
+  <meta name="description" content="Demo Site 3 is a Pixel art themed sample built by ZeroFy, with a light and dark colour mode." />
+  <link rel="icon" href="favicon/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/demo-themes.css" />
+  <script>
+    // Resolve the saved colour mode before first paint so the page never flashes.
+    (function () {
+      var stored = null;
+      try {
+        stored = localStorage.getItem('zerofy-demo-mode');
+      } catch (error) {
+        stored = null;
+      }
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-mode', stored || (prefersDark ? 'dark' : 'light'));
+    })();
+  </script>
+</head>
+<body>
+  <div id="page-transition" class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">ZeroFy</a>
+      <div class="header-end">
+        <div class="demo-mode">
+          <button class="demo-mode__btn" type="button" data-mode-toggle aria-pressed="false" aria-label="Switch to dark mode">
+            <svg class="demo-mode__icon demo-mode__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+            <svg class="demo-mode__icon demo-mode__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+            </svg>
+            <span class="demo-mode__label" data-mode-text>Dark</span>
+          </button>
+        </div>
+        <button class="mobile-nav-toggle" aria-controls="site-navigation" aria-expanded="false">Menu</button>
+        <nav id="site-navigation" class="site-nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="demo-sites-menu">Demo Sites</button>
+            <ul class="nav-dropdown-menu" id="demo-sites-menu">
+            <li><a href="demo-site-1.html">Demo Site 1</a></li>
+            <li><a href="demo-site-2.html">Demo Site 2</a></li>
+            <li><a href="demo-site-3.html">Demo Site 3</a></li>
+            <li><a href="demo-site-4.html">Demo Site 4</a></li>
+            </ul>
+          </div>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="demo-hero">
+      <div class="container">
+        <p class="demo-kicker">Demo Site 3 &mdash; Pixel art</p>
+        <h1 class="demo-title">Press start to build.</h1>
+        <p class="demo-lede">Pixel art borrows the grammar of 8-bit games: hard edges, chunky borders, a fixed grid and a small deliberate palette. It reads as playful, and it loads fast.</p>
+        <ul class="demo-tags">
+          <li class="demo-tag">Monospace</li>
+          <li class="demo-tag">Hard edges</li>
+          <li class="demo-tag">8px tiles</li>
+          <li class="demo-tag">No radius</li>
+          <li class="demo-tag">Light and dark</li>
+        </ul>
+        <div class="demo-actions">
+          <a href="contact.html" class="button button-primary">Start your project</a>
+          <a href="demo-site-4.html" class="button button-secondary">See the next demo</a>
+        </div>
+      </div>
+    </section>
+    <section class="demo-section">
+      <div class="container">
+        <h2 class="demo-heading">What this theme does</h2>
+        <p class="demo-sub">Four rules borrowed straight from 8-bit game menus, applied to a web page.</p>
+        <div class="demo-grid">
+          <article class="demo-card">
+            <h3>Tiles</h3>
+            <p>Everything snaps to a visible grid. Nothing overlaps or bleeds, so the layout stays crisp at any zoom level.</p>
+          </article>
+          <article class="demo-card">
+            <h3>Sprites</h3>
+            <p>Icon-like accents and offset shadows give elements a physical, pressable quality that flat cards cannot match.</p>
+          </article>
+          <article class="demo-card">
+            <h3>Palettes</h3>
+            <p>A few saturated colours go a long way. Dark mode swaps the arcade palette for neon on deep purple-black.</p>
+          </article>
+          <article class="demo-card">
+            <h3>Speed</h3>
+            <p>Hard shadows and no blur mean the page is cheap to paint, which is why the genre still works on low-end devices.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="demo-section demo-section--alt">
+      <div class="container">
+        <h2 class="demo-heading">The theme in numbers</h2>
+        <p class="demo-sub">Everything in this theme is a whole number. That is not a coincidence, it is the style.</p>
+        <ul class="demo-stats">
+          <li class="demo-stat">
+            <span class="demo-stat__value">0px</span>
+            <span class="demo-stat__label">Border radius</span>
+            <p class="demo-stat__note">Not one rounded corner anywhere in the theme.</p>
+          </li>
+          <li class="demo-stat">
+            <span class="demo-stat__value">3px</span>
+            <span class="demo-stat__label">Hard borders</span>
+            <p class="demo-stat__note">Thick enough to read as a sprite edge, thin enough to keep the grid.</p>
+          </li>
+          <li class="demo-stat">
+            <span class="demo-stat__value">6px</span>
+            <span class="demo-stat__label">Offset shadow</span>
+            <p class="demo-stat__note">A solid block shadow, never blurred and never grey.</p>
+          </li>
+          <li class="demo-stat">
+            <span class="demo-stat__value">4</span>
+            <span class="demo-stat__label">Colours</span>
+            <p class="demo-stat__note">Ink, paper and two accents. Dark mode swaps the accents, not the system.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="demo-section">
+      <div class="container">
+        <h2 class="demo-heading">Typography and spacing</h2>
+        <p class="demo-sub">The same specimen as the other demos, set in monospace so you can see how the character grid changes the rhythm.</p>
+        <div class="demo-spec-layout">
+          <ul class="demo-specimen">
+            <li class="demo-specimen__row">
+              <span class="demo-specimen__label">Display 68px</span>
+              <p class="demo-specimen__sample demo-specimen__sample--display">START</p>
+            </li>
+            <li class="demo-specimen__row">
+              <span class="demo-specimen__label">Heading 36px</span>
+              <p class="demo-specimen__sample demo-specimen__sample--heading">PLAYER ONE</p>
+            </li>
+            <li class="demo-specimen__row">
+              <span class="demo-specimen__label">Title 22px</span>
+              <p class="demo-specimen__sample demo-specimen__sample--title">INSERT COIN</p>
+            </li>
+            <li class="demo-specimen__row">
+              <span class="demo-specimen__label">Body 17px</span>
+              <p class="demo-specimen__sample demo-specimen__sample--body">Set in a monospace face so every line starts on the same character.</p>
+            </li>
+            <li class="demo-specimen__row">
+              <span class="demo-specimen__label">Caption 13px</span>
+              <p class="demo-specimen__sample demo-specimen__sample--caption">SCORE 000120</p>
+            </li>
+          </ul>
+          <dl class="demo-specs">
+            <div class="demo-spec">
+              <dt>Display</dt>
+              <dd>Courier New 800, tight tracking and no anti-aliased softness.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Body</dt>
+              <dd>Courier New 400 at 17px, which keeps the measure honest at any width.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Tile</dt>
+              <dd>8px base, so padding, gaps and borders all land on whole pixels.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Borders</dt>
+              <dd>3px solid ink in light, 3px near-black in dark. Always the same weight.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Shadows</dt>
+              <dd>6px 6px 0 in the ink colour. No blur, no spread, no opacity.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Radii</dt>
+              <dd>0px everywhere, including buttons, chips and the FAQ panels.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Grid</dt>
+              <dd>A 32px checkerboard sits behind the hero, faded to 55 percent.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Motion</dt>
+              <dd>Hover lifts by 2px and the shadow grows to 7px. Nothing fades.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Type</dt>
+              <dd>All monospace, which is what makes the page feel like one sprite sheet.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Files</dt>
+              <dd>3 HTML, 2 CSS, 2 JS. No images and no sprite sheet to load.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="demo-section">
+      <div class="container">
+        <h2 class="demo-heading">What you get in the box</h2>
+        <p class="demo-sub">Six things already solved, and not one image to download with them.</p>
+        <ul class="demo-checklist">
+          <li class="demo-check">
+            <span class="demo-check__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+            <div>
+              <h3>A real grid</h3>
+              <p>Padding, gaps and borders are all multiples of 8px, so the layout never drifts by a stray pixel at any zoom level.</p>
+            </div>
+          </li>
+          <li class="demo-check">
+            <span class="demo-check__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+            <div>
+              <h3>Sprite-like hover</h3>
+              <p>Cards lift two pixels and the block shadow grows to match, so the press feels physical rather than decorative.</p>
+            </div>
+          </li>
+          <li class="demo-check">
+            <span class="demo-check__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+            <div>
+              <h3>Two palettes</h3>
+              <p>Light is cream and ink with a red accent. Dark is arcade green and hot pink on deep purple-black, with the same four-colour logic.</p>
+            </div>
+          </li>
+          <li class="demo-check">
+            <span class="demo-check__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+            <div>
+              <h3>Zero image weight</h3>
+              <p>The checkerboard, the borders and the shadows are all CSS. There is no sprite sheet to download, so the page paints immediately.</p>
+            </div>
+          </li>
+          <li class="demo-check">
+            <span class="demo-check__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+            <div>
+              <h3>Readable anyway</h3>
+              <p>Large type, high contrast and 44px targets. Playful is not the same thing as inaccessible.</p>
+            </div>
+          </li>
+          <li class="demo-check">
+            <span class="demo-check__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+            <div>
+              <h3>Reduced motion</h3>
+              <p>The lift is switched off entirely when the system asks for less movement, and the shadow holds still.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="demo-section demo-section--alt">
+      <div class="container">
+        <h2 class="demo-heading">How a build with this theme goes</h2>
+        <p class="demo-sub">Four steps. The colour rule at step three is the one that keeps the theme honest.</p>
+        <ol class="demo-steps">
+          <li class="demo-step">
+            <span class="demo-step__num">1</span>
+            <h3>Sketch the grid</h3>
+            <p>We draw the page as tiles first. If a block does not fit the 8px grid, the content is wrong rather than the grid.</p>
+          </li>
+          <li class="demo-step">
+            <span class="demo-step__num">2</span>
+            <h3>Snap the type</h3>
+            <p>Monospace only, with line lengths in whole characters so the right edge is as straight as the left one.</p>
+          </li>
+          <li class="demo-step">
+            <span class="demo-step__num">3</span>
+            <h3>Pick four colours</h3>
+            <p>Ink, paper and two accents. The moment a fifth colour is needed, something is being said twice.</p>
+          </li>
+          <li class="demo-step">
+            <span class="demo-step__num">4</span>
+            <h3>Ship it light</h3>
+            <p>The whole theme is under 5KB of extra CSS and no images, so it loads before the fonts do.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section class="demo-section">
+      <div class="container">
+        <h2 class="demo-heading">Is this the right theme for you?</h2>
+        <p class="demo-sub">The style is loud in a way that is hard to un-notice, so it is worth saying plainly who should stay away.</p>
+        <div class="demo-split">
+          <div class="demo-panel demo-panel--use">
+            <h3>Use it when</h3>
+            <ul>
+              <li>Game studios, indies and anything launching into a fandom.</li>
+              <li>Retro and nostalgia brands that grew up on 8-bit references.</li>
+              <li>Events, tournaments and community meet-ups with a crowd under 40.</li>
+              <li>Side projects that deserve more personality than a corporate template.</li>
+            </ul>
+          </div>
+          <div class="demo-panel demo-panel--avoid">
+            <h3>Skip it when</h3>
+            <ul>
+              <li>Enterprise and B2B, where the style reads as unserious.</li>
+              <li>Finance, insurance and health, where trust comes from restraint.</li>
+              <li>Long documents, where monospace at length is tiring to read.</li>
+              <li>Dense tables and forms, which need a softer visual rhythm.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="demo-section demo-section--alt">
+      <div class="container">
+        <h2 class="demo-heading">Questions people ask</h2>
+        <p class="demo-sub">The questions that come up most when a client brings us a screenshot of a retro site.</p>
+        <div class="demo-faq">
+          <details>
+            <summary>Is pixel art just nostalgia?</summary>
+            <div class="demo-faq__body">
+              <p>It started there, but the reason it survives is mechanical. Hard edges and block shadows are the cheapest depth effect a browser can draw, and a small palette removes the decisions that make a page look generic. Nostalgia is a bonus.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Does the monospace text hurt readability?</summary>
+            <div class="demo-faq__body">
+              <p>At 17px with a 1.65 line height it reads fine, which is why the body size is not reduced for style. Push the measure past 75 characters and the eye starts to struggle, so the container is capped rather than left full width.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Why is the dark mode green and pink?</summary>
+            <div class="demo-faq__body">
+              <p>Because light mode is ink on cream and dark mode is a different palette, not an inverted one. Neon green against purple-black is the arcade reference, and it keeps the same four colours in play so the layout does not have to change.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Can I use a pixel font?</summary>
+            <div class="demo-faq__body">
+              <p>Yes, and most sites in this style do. Swap <code>--display-font</code> and <code>--body-font</code> for a pixel face, but check the line height: pixel fonts sit larger and usually need 1.7 or 1.8 to stay readable.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Will it work at 200 percent zoom?</summary>
+            <div class="demo-faq__body">
+              <p>Yes. The layout is built on whole-pixel tiles and relative units, so at 200 percent every border stays even and nothing overlaps. Hard shadows scale with the layout, which is exactly the behaviour you want.</p>
+            </div>
+          </details>
+          <details>
+            <summary>What about accessibility?</summary>
+            <div class="demo-faq__body">
+              <p>Playful does not mean inaccessible. Text contrast is well past AA in both modes, the focus ring is a solid 3px outline, the FAQ uses native disclosure elements, and every target is at least 44px on its shortest side.</p>
+            </div>
+          </details>
+        </div>
+        <figure class="demo-quote">
+          <blockquote>
+            <p class="demo-quote__text">Our players recognised the genre before they read a word, and the page still loaded in under a second on three-year-old hardware.</p>
+          </blockquote>
+          <figcaption>Placeholder testimonial for this demo &mdash; swap in a real client quote before launch.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="demo-section">
+      <div class="container">
+        <h2 class="demo-heading">Live colour palette</h2>
+        <p class="demo-sub">Ten tokens, two palettes, and a border colour that follows the ink rather than the paper. The code under each chip is read live from the computed style.</p>
+        <ul class="demo-palette">
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--bg);"></span>
+            <span class="demo-swatch__name">Background</span>
+            <span class="demo-swatch__code" data-swatch-var="--bg">--bg</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--surface);"></span>
+            <span class="demo-swatch__name">Surface</span>
+            <span class="demo-swatch__code" data-swatch-var="--surface">--surface</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--surface-strong);"></span>
+            <span class="demo-swatch__name">Surface tint</span>
+            <span class="demo-swatch__code" data-swatch-var="--surface-strong">--surface-strong</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--primary);"></span>
+            <span class="demo-swatch__name">Primary</span>
+            <span class="demo-swatch__code" data-swatch-var="--primary">--primary</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--primary-soft);"></span>
+            <span class="demo-swatch__name">Primary soft</span>
+            <span class="demo-swatch__code" data-swatch-var="--primary-soft">--primary-soft</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--secondary);"></span>
+            <span class="demo-swatch__name">Secondary</span>
+            <span class="demo-swatch__code" data-swatch-var="--secondary">--secondary</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--accent);"></span>
+            <span class="demo-swatch__name">Accent</span>
+            <span class="demo-swatch__code" data-swatch-var="--accent">--accent</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--text);"></span>
+            <span class="demo-swatch__name">Text</span>
+            <span class="demo-swatch__code" data-swatch-var="--text">--text</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--muted);"></span>
+            <span class="demo-swatch__name">Muted</span>
+            <span class="demo-swatch__code" data-swatch-var="--muted">--muted</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--border);"></span>
+            <span class="demo-swatch__name">Border</span>
+            <span class="demo-swatch__code" data-swatch-var="--border">--border</span>
+          </li>
+        </ul>
+        <p class="demo-note">Light mode is cream and ink with a red accent. Dark mode is arcade green and hot pink on deep purple-black, which is why the border flips to near-black rather than staying brown. Values under each chip are read live from the computed style.</p>
+      </div>
+    </section>
+    <section class="demo-section demo-section--alt">
+      <div class="container">
+        <h2 class="demo-heading">Try the other themes</h2>
+        <p class="demo-sub">Three other personalities to compare against, with your colour mode carried across.</p>
+        <ul class="demo-gallery">
+          <li>
+            <a class="demo-tile" href="demo-site-1.html">
+              <span class="demo-tile__theme">Demo Site 1 &middot; Minimalism</span>
+              <span class="demo-tile__name">Less, but better.</span>
+              <span class="demo-tile__desc">Monochrome, hairline rules and one accent spent only where it matters.</span>
+              <span class="demo-tile__go">Open the demo</span>
+            </a>
+          </li>
+          <li>
+            <a class="demo-tile" href="demo-site-2.html">
+              <span class="demo-tile__theme">Demo Site 2 &middot; Futuristic</span>
+              <span class="demo-tile__name">Built for what comes next.</span>
+              <span class="demo-tile__desc">Deep blue, glow and a technical grid. Reads as fast and engineered.</span>
+              <span class="demo-tile__go">Open the demo</span>
+            </a>
+          </li>
+          <li>
+            <a class="demo-tile" href="demo-site-4.html">
+              <span class="demo-tile__theme">Demo Site 4 &middot; Clay style</span>
+              <span class="demo-tile__name">Soft edges, solid build.</span>
+              <span class="demo-tile__desc">Big radii, warm colour and stacked shadows that feel moulded by hand.</span>
+              <span class="demo-tile__go">Open the demo</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="demo-section demo-cta">
+      <div class="container">
+        <h2 class="demo-heading">Want your project to look like this?</h2>
+        <p class="demo-sub">Tell us what it is for and who it has to win over. We will build a one-page version in this style so you can judge it before committing to anything.</p>
+        <div class="demo-actions">
+          <a href="contact.html" class="button button-primary">Start your project</a>
+          <a href="about.html" class="button button-secondary">Read about ZeroFy</a>
+        </div>
+        <p class="demo-cta__note">Replies within one working day. No newsletter and no follow-up calls.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span data-current-year></span> <span class="company-name">Marandi Internet Private Limited</span>. ZeroFy. Simple website solutions for businesses and creators.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/theme.js"></script>
+</body>
+</html>

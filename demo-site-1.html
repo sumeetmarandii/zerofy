@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="minimalism" data-mode="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f5f3" />
+  <title>Demo Site 1 &mdash; Minimalism | ZeroFy</title>
+  <meta name="description" content="Demo Site 1 is a Minimalism themed sample built by ZeroFy, with a light and dark colour mode." />
+  <link rel="icon" href="favicon/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/demo-themes.css" />
+  <script>
+    // Resolve the saved colour mode before first paint so the page never flashes.
+    (function () {
+      var stored = null;
+      try {
+        stored = localStorage.getItem('zerofy-demo-mode');
+      } catch (error) {
+        stored = null;
+      }
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-mode', stored || (prefersDark ? 'dark' : 'light'));
+    })();
+  </script>
+</head>
+<body>
+  <div id="page-transition" class="page-transition" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">ZeroFy</a>
+      <div class="header-end">
+        <div class="demo-mode">
+          <button class="demo-mode__btn" type="button" data-mode-toggle aria-pressed="false" aria-label="Switch to dark mode">
+            <svg class="demo-mode__icon demo-mode__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            </svg>
+            <svg class="demo-mode__icon demo-mode__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+            </svg>
+            <span class="demo-mode__label" data-mode-text>Dark</span>
+          </button>
+        </div>
+        <button class="mobile-nav-toggle" aria-controls="site-navigation" aria-expanded="false">Menu</button>
+        <nav id="site-navigation" class="site-nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="demo-sites-menu">Demo Sites</button>
+            <ul class="nav-dropdown-menu" id="demo-sites-menu">
+            <li><a href="demo-site-1.html">Demo Site 1</a></li>
+            <li><a href="demo-site-2.html">Demo Site 2</a></li>
+            <li><a href="demo-site-3.html">Demo Site 3</a></li>
+            <li><a href="demo-site-4.html">Demo Site 4</a></li>
+            </ul>
+          </div>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="demo-hero">
+      <div class="container">
+        <p class="demo-kicker">Demo Site 1 &mdash; Minimalism</p>
+        <h1 class="demo-title">Less, but better.</h1>
+        <p class="demo-lede">Minimalism is not emptiness. It is the discipline of keeping only what earns its place: a calm layout, quiet colour, and typography that does the talking.</p>
+        <ul class="demo-tags">
+          <li class="demo-tag">Monochrome</li>
+          <li class="demo-tag">Paper white</li>
+          <li class="demo-tag">Hairline rules</li>
+          <li class="demo-tag">Type led</li>
+          <li class="demo-tag">Light and dark</li>
+        </ul>
+        <div class="demo-actions">
+          <a href="contact.html" class="button button-primary">Start your project</a>
+          <a href="demo-site-2.html" class="button button-secondary">See the next demo</a>
+        </div>
+      </div>
+    </section>
+    <section class="demo-section">
+      <div class="container">
+        <h2 class="demo-heading">What this theme does</h2>
+        <p class="demo-sub">Four habits that do most of the work, whatever the page happens to contain.</p>
+        <div class="demo-grid">
+          <article class="demo-card">
+            <h3>Whitespace</h3>
+            <p>Space is a feature. Generous margins let every element breathe and make the page feel considered rather than crowded.</p>
+          </article>
+          <article class="demo-card">
+            <h3>Hierarchy</h3>
+            <p>One idea per screen, set clearly by size, weight and space. Everything else steps back so the message lands.</p>
+          </article>
+          <article class="demo-card">
+            <h3>Restraint</h3>
+            <p>A monochrome palette removes noise, so the single accent you do use carries far more weight.</p>
+          </article>
+          <article class="demo-card">
+            <h3>Repetition</h3>
+            <p>The same margin, the same type size, the same line length. Repetition is what makes a quiet page feel deliberate.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="demo-section demo-section--alt">
+      <div class="container">
+        <h2 class="demo-heading">The theme in numbers</h2>
+        <p class="demo-sub">Small, measurable decisions are what make a restrained page feel calm rather than empty.</p>
+        <ul class="demo-stats">
+          <li class="demo-stat">
+            <span class="demo-stat__value">0</span>
+            <span class="demo-stat__label">Decorative colours</span>
+            <p class="demo-stat__note">One accent, spent only where it earns attention.</p>
+          </li>
+          <li class="demo-stat">
+            <span class="demo-stat__value">1</span>
+            <span class="demo-stat__label">Type family</span>
+            <p class="demo-stat__note">Inter at four weights carries the entire page.</p>
+          </li>
+          <li class="demo-stat">
+            <span class="demo-stat__value">8px</span>
+            <span class="demo-stat__label">Spacing unit</span>
+            <p class="demo-stat__note">A single rhythm behind every margin and gap.</p>
+          </li>
+          <li class="demo-stat">
+            <span class="demo-stat__value">320px</span>
+            <span class="demo-stat__label">Narrowest layout</span>
+            <p class="demo-stat__note">Fluid rules hold all the way down to 320px.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="demo-section">
+      <div class="container">
+        <h2 class="demo-heading">Typography and spacing</h2>
+        <p class="demo-sub">One family, one scale, one rhythm. The specimen on the left is rendered with the same tokens as the rest of the page.</p>
+        <div class="demo-spec-layout">
+          <ul class="demo-specimen">
+            <li class="demo-specimen__row">
+              <span class="demo-specimen__label">Display 68px</span>
+              <p class="demo-specimen__sample demo-specimen__sample--display">Quiet authority</p>
+            </li>
+            <li class="demo-specimen__row">
+              <span class="demo-specimen__label">Heading 36px</span>
+              <p class="demo-specimen__sample demo-specimen__sample--heading">A clear second voice</p>
+            </li>
+            <li class="demo-specimen__row">
+              <span class="demo-specimen__label">Title 22px</span>
+              <p class="demo-specimen__sample demo-specimen__sample--title">Card and section titles</p>
+            </li>
+            <li class="demo-specimen__row">
+              <span class="demo-specimen__label">Body 17px</span>
+              <p class="demo-specimen__sample demo-specimen__sample--body">The reading size. Long enough to stay comfortable for an hour.</p>
+            </li>
+            <li class="demo-specimen__row">
+              <span class="demo-specimen__label">Caption 13px</span>
+              <p class="demo-specimen__sample demo-specimen__sample--caption">Labels, notes and metadata</p>
+            </li>
+          </ul>
+          <dl class="demo-specs">
+            <div class="demo-spec">
+              <dt>Display</dt>
+              <dd>Inter 800 with -0.045em tracking, so large type sits tight.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Body</dt>
+              <dd>Inter 400 at 17px on a 1.65 line height.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Scale</dt>
+              <dd>68 / 36 / 22 / 17 / 13 px, five sizes and no more.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Spacing</dt>
+              <dd>4, 8, 16, 24, 32 and 64 px from one rhythm.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Measure</dt>
+              <dd>56ch for ledes, 68ch for running text.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Grid</dt>
+              <dd>12 columns, 1200px maximum, 24px gutter.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Corners</dt>
+              <dd>0px. Nothing on this page is rounded.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Borders</dt>
+              <dd>A single 1px hairline in --border.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Shadows</dt>
+              <dd>One 1px lift. No glow, no depth tricks.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Motion</dt>
+              <dd>150ms on opacity and colour only.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Icons</dt>
+              <dd>1.05rem, 1.8px outline stroke, no fills.</dd>
+            </div>
+            <div class="demo-spec">
+              <dt>Files</dt>
+              <dd>3 HTML, 2 CSS, 2 JS. No build step, no framework.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="demo-section">
+      <div class="container">
+        <h2 class="demo-heading">What you get in the box</h2>
+        <p class="demo-sub">Six things that are already solved, so the work that remains is your own content.</p>
+        <ul class="demo-checklist">
+          <li class="demo-check">
+            <span class="demo-check__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+            <div>
+              <h3>Design tokens</h3>
+              <p>Every colour, radius and shadow is a CSS variable, so the light and dark palettes live in a single block of overrides.</p>
+            </div>
+          </li>
+          <li class="demo-check">
+            <span class="demo-check__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+            <div>
+              <h3>Semantic markup</h3>
+              <p>Landmarks, one h1, ordered headings and real lists, so assistive technology reads the page in the order you wrote it.</p>
+            </div>
+          </li>
+          <li class="demo-check">
+            <span class="demo-check__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+            <div>
+              <h3>Keyboard support</h3>
+              <p>Every control is reachable with Tab and shows a visible 2px focus ring that is never removed.</p>
+            </div>
+          </li>
+          <li class="demo-check">
+            <span class="demo-check__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+            <div>
+              <h3>Responsive by default</h3>
+              <p>Fluid type and grid rules hold from 320px. Breakpoints only handle the navigation and the mode switcher.</p>
+            </div>
+          </li>
+          <li class="demo-check">
+            <span class="demo-check__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+            <div>
+              <h3>Reduced motion</h3>
+              <p>When the operating system asks for less movement, every transition on the page collapses to nothing.</p>
+            </div>
+          </li>
+          <li class="demo-check">
+            <span class="demo-check__mark"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12.5l5 5L20 6.5" /></svg></span>
+            <div>
+              <h3>No dependencies</h3>
+              <p>No framework and no bundler. Open the file in a browser and it runs.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="demo-section demo-section--alt">
+      <div class="container">
+        <h2 class="demo-heading">How a build with this theme goes</h2>
+        <p class="demo-sub">Four steps, usually two or three days for a small business site from brief to handover.</p>
+        <ol class="demo-steps">
+          <li class="demo-step">
+            <span class="demo-step__num">1</span>
+            <h3>Strip it back</h3>
+            <p>We list every element on the page and delete the ones that do not earn the space they use.</p>
+          </li>
+          <li class="demo-step">
+            <span class="demo-step__num">2</span>
+            <h3>Set the type</h3>
+            <p>One family, one scale, four weights. Everything else inherits rather than re-declaring.</p>
+          </li>
+          <li class="demo-step">
+            <span class="demo-step__num">3</span>
+            <h3>Space it out</h3>
+            <p>Margins come from an 8px rhythm, so the page carries an invisible grid even though nothing is lined up visibly.</p>
+          </li>
+          <li class="demo-step">
+            <span class="demo-step__num">4</span>
+            <h3>Prove it</h3>
+            <p>We check contrast, keyboard order and a 320px viewport before the theme goes anywhere near production.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section class="demo-section">
+      <div class="container">
+        <h2 class="demo-heading">Is this the right theme for you?</h2>
+        <p class="demo-sub">Minimalism is a strong opinion, so it is worth being honest about where it works and where it will fight you.</p>
+        <div class="demo-split">
+          <div class="demo-panel demo-panel--use">
+            <h3>Use it when</h3>
+            <ul>
+              <li>Portfolios, studios and the sites where the work is the product.</li>
+              <li>Editorial, essays and anything a visitor reads for more than a minute.</li>
+              <li>Premium and luxury brands whose voice does the selling.</li>
+              <li>Small businesses that need to look expensive without a large budget.</li>
+            </ul>
+          </div>
+          <div class="demo-panel demo-panel--avoid">
+            <h3>Skip it when</h3>
+            <ul>
+              <li>Dashboards and data tools, where density beats calm every time.</li>
+              <li>Marketplaces and catalogues that need colour to sort categories.</li>
+              <li>Children and games, where an unfriendly page loses the audience.</li>
+              <li>Brands that need six accent colours to tell sections apart.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="demo-section demo-section--alt">
+      <div class="container">
+        <h2 class="demo-heading">Questions people ask</h2>
+        <p class="demo-sub">The things clients usually want to know before committing to a quiet design.</p>
+        <div class="demo-faq">
+          <details>
+            <summary>Can I copy this demo as a starting point?</summary>
+            <div class="demo-faq__body">
+              <p>Yes. The four demos share <code>css/styles.css</code> and <code>css/demo-themes.css</code>. Each theme is one token block plus one character block, so copying a page and its theme gives you a working site with no wiring to redo.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Why is everything black and white?</summary>
+            <div class="demo-faq__body">
+              <p>A monochrome palette removes the decision that usually goes wrong. With no colour to fight over, contrast, spacing and type become the only things left to get right, and those are the things readers actually notice.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Can I add a colour back?</summary>
+            <div class="demo-faq__body">
+              <p>One. Change <code>--primary</code> and the button, the kicker and the stat values follow. Adding a second accent usually undoes the effect, so keep it to one and let space do the rest of the work.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Does the dark mode hold up?</summary>
+            <div class="demo-faq__body">
+              <p>It is a separate set of tokens, not an inversion. Light is paper white on warm grey; dark is near-black with softened contrast so text stays easy on the eyes at night. The swatches above change with the switcher so you can compare them directly.</p>
+            </div>
+          </details>
+          <details>
+            <summary>What fonts can I swap in?</summary>
+            <div class="demo-faq__body">
+              <p>Anything with a similar range of weights. The theme uses <code>--display-font</code> and <code>--body-font</code>, so you can point both at one family or run a serif for headings and a sans for body copy without touching the markup.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Is it accessible?</summary>
+            <div class="demo-faq__body">
+              <p>The light palette runs near-black on paper white, far past the 4.5:1 ratio WCAG asks for, and dark mode is checked the same way. Focus rings are never suppressed, the FAQ uses real disclosure widgets, and every list on the page is a real list.</p>
+            </div>
+          </details>
+        </div>
+        <figure class="demo-quote">
+          <blockquote>
+            <p class="demo-quote__text">We stopped redesigning the brand and started deleting from it. The site finally sounds like the way we actually talk.</p>
+          </blockquote>
+          <figcaption>Placeholder testimonial for this demo &mdash; swap in a real client quote before launch.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="demo-section">
+      <div class="container">
+        <h2 class="demo-heading">Live colour palette</h2>
+        <p class="demo-sub">Ten tokens, two palettes. The chips are painted with the same custom properties the page uses, and the code under each one is read live from the computed style, so the switch in the header updates both together.</p>
+        <ul class="demo-palette">
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--bg);"></span>
+            <span class="demo-swatch__name">Background</span>
+            <span class="demo-swatch__code" data-swatch-var="--bg">--bg</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--surface);"></span>
+            <span class="demo-swatch__name">Surface</span>
+            <span class="demo-swatch__code" data-swatch-var="--surface">--surface</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--surface-strong);"></span>
+            <span class="demo-swatch__name">Surface tint</span>
+            <span class="demo-swatch__code" data-swatch-var="--surface-strong">--surface-strong</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--primary);"></span>
+            <span class="demo-swatch__name">Primary</span>
+            <span class="demo-swatch__code" data-swatch-var="--primary">--primary</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--primary-soft);"></span>
+            <span class="demo-swatch__name">Primary soft</span>
+            <span class="demo-swatch__code" data-swatch-var="--primary-soft">--primary-soft</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--secondary);"></span>
+            <span class="demo-swatch__name">Secondary</span>
+            <span class="demo-swatch__code" data-swatch-var="--secondary">--secondary</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--accent);"></span>
+            <span class="demo-swatch__name">Accent</span>
+            <span class="demo-swatch__code" data-swatch-var="--accent">--accent</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--text);"></span>
+            <span class="demo-swatch__name">Text</span>
+            <span class="demo-swatch__code" data-swatch-var="--text">--text</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--muted);"></span>
+            <span class="demo-swatch__name">Muted</span>
+            <span class="demo-swatch__code" data-swatch-var="--muted">--muted</span>
+          </li>
+          <li class="demo-swatch">
+            <span class="demo-swatch__chip" style="--swatch: var(--border);"></span>
+            <span class="demo-swatch__name">Border</span>
+            <span class="demo-swatch__code" data-swatch-var="--border">--border</span>
+          </li>
+        </ul>
+        <p class="demo-note">Light mode is paper white on warm grey. Dark mode is near-black with softened contrast, so text stays easy on the eyes at night. The value under each chip is read live from the computed style, which is why it changes with the switch.</p>
+      </div>
+    </section>
+    <section class="demo-section demo-section--alt">
+      <div class="container">
+        <h2 class="demo-heading">Try the other themes</h2>
+        <p class="demo-sub">The same content, three other personalities. The mode you pick follows you between them.</p>
+        <ul class="demo-gallery">
+          <li>
+            <a class="demo-tile" href="demo-site-2.html">
+              <span class="demo-tile__theme">Demo Site 2 &middot; Futuristic</span>
+              <span class="demo-tile__name">Built for what comes next.</span>
+              <span class="demo-tile__desc">Deep blue, glow and a technical grid. Reads as fast and engineered.</span>
+              <span class="demo-tile__go">Open the demo</span>
+            </a>
+          </li>
+          <li>
+            <a class="demo-tile" href="demo-site-3.html">
+              <span class="demo-tile__theme">Demo Site 3 &middot; Pixel art</span>
+              <span class="demo-tile__name">Press start to build.</span>
+              <span class="demo-tile__desc">Hard edges, chunky borders and a tiny palette lifted from 8-bit games.</span>
+              <span class="demo-tile__go">Open the demo</span>
+            </a>
+          </li>
+          <li>
+            <a class="demo-tile" href="demo-site-4.html">
+              <span class="demo-tile__theme">Demo Site 4 &middot; Clay style</span>
+              <span class="demo-tile__name">Soft edges, solid build.</span>
+              <span class="demo-tile__desc">Big radii, warm colour and stacked shadows that feel moulded by hand.</span>
+              <span class="demo-tile__go">Open the demo</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="demo-section demo-cta">
+      <div class="container">
+        <h2 class="demo-heading">Want this quiet for your business?</h2>
+        <p class="demo-sub">Tell us what you do and what you would rather stop saying. We will send back a stripped-down first pass, a fixed price, and an honest note on anything we think should be cut.</p>
+        <div class="demo-actions">
+          <a href="contact.html" class="button button-primary">Start your project</a>
+          <a href="about.html" class="button button-secondary">Read about ZeroFy</a>
+        </div>
+        <p class="demo-cta__note">Replies within one working day. No newsletter and no follow-up calls.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span data-current-year></span> <span class="company-name">Marandi Internet Private Limited</span>. ZeroFy. Simple website solutions for businesses and creators.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/theme.js"></script>
+</body>
+</html>

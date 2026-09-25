@@ -1,0 +1,1462 @@
+/* ==========================================================================
+   ZeroFy demo themes
+
+   Loaded only by demo-site-*.html, after styles.css. Each theme redefines the
+   shared design tokens so the common header, nav, buttons and footer follow
+   the palette automatically, then layers on its own character.
+   ========================================================================== */
+
+html[data-theme] {
+  color-scheme: light;
+}
+
+html[data-theme][data-mode='dark'] {
+  color-scheme: dark;
+}
+
+html[data-theme][data-mode] {
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* --------------------------------------------------------------------------
+   1. Palette — Minimalism (Demo Site 1)
+   Monochrome, hairline borders, square corners, quiet type.
+   -------------------------------------------------------------------------- */
+
+html[data-theme='minimalism'] {
+  --bg: #f5f5f3;
+  --surface: #ffffff;
+  --surface-strong: #eaeae6;
+  --text: #141414;
+  --muted: #71716e;
+  --primary: #141414;
+  --primary-soft: #e7e7e3;
+  --secondary: #71716e;
+  --border: #e3e3de;
+  --accent: #141414;
+  --halo: rgba(20, 20, 20, 0.05);
+  --panel: rgba(255, 255, 255, 0.94);
+  --header-bg: rgba(245, 245, 243, 0.88);
+  --panel-shadow: 0 12px 32px rgba(20, 20, 20, 0.08);
+  --shadow: 0 1px 0 rgba(20, 20, 20, 0.05);
+  --r-sm: 0px;
+  --r-md: 0px;
+  --r-lg: 0px;
+  --btn-bg: #141414;
+  --btn-fg: #ffffff;
+  --btn-shadow: none;
+  --display-font: 'Inter', system-ui, -apple-system, sans-serif;
+  --body-font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html[data-theme='minimalism'][data-mode='dark'] {
+  --bg: #0b0b0b;
+  --surface: #141414;
+  --surface-strong: #1e1e1e;
+  --text: #f4f4f2;
+  --muted: #9a9a96;
+  --primary: #f4f4f2;
+  --primary-soft: #262626;
+  --secondary: #9a9a96;
+  --border: #262626;
+  --accent: #f4f4f2;
+  --halo: rgba(244, 244, 242, 0.06);
+  --panel: rgba(20, 20, 20, 0.94);
+  --header-bg: rgba(11, 11, 11, 0.88);
+  --panel-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow: 0 1px 0 rgba(244, 244, 242, 0.04);
+  --btn-bg: #f4f4f2;
+  --btn-fg: #0b0b0b;
+}
+
+/* --------------------------------------------------------------------------
+   2. Palette — Futuristic (Demo Site 2)
+   Deep space blues, electric blue and violet, neon glow.
+   -------------------------------------------------------------------------- */
+
+html[data-theme='futuristic'] {
+  --bg: #eef4ff;
+  --surface: #ffffff;
+  --surface-strong: #dce8ff;
+  --text: #061531;
+  --muted: #4a6187;
+  --primary: #0b5fff;
+  --primary-soft: #dde8ff;
+  --secondary: #6d3bff;
+  --border: #c7daf7;
+  --accent: #0b5fff;
+  --glow: #00c8ff;
+  --halo: rgba(11, 95, 255, 0.14);
+  --panel: rgba(255, 255, 255, 0.93);
+  --header-bg: rgba(238, 244, 255, 0.85);
+  --panel-shadow: 0 18px 48px rgba(11, 95, 255, 0.18);
+  --shadow: 0 20px 60px rgba(11, 95, 255, 0.12);
+  --r-sm: 10px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --btn-bg: linear-gradient(135deg, #0b5fff, #6d3bff);
+  --btn-fg: #ffffff;
+  --btn-shadow: 0 12px 34px rgba(11, 95, 255, 0.35);
+  --display-font: 'Inter', system-ui, -apple-system, sans-serif;
+  --body-font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html[data-theme='futuristic'][data-mode='dark'] {
+  --bg: #04070f;
+  --surface: #0a1122;
+  --surface-strong: #111c36;
+  --text: #dce9ff;
+  --muted: #8aa2c8;
+  --primary: #4d8dff;
+  --primary-soft: #14254a;
+  --secondary: #a78bfa;
+  --border: #1c2c4e;
+  --accent: #22d3ee;
+  --glow: #22d3ee;
+  --halo: rgba(34, 211, 238, 0.16);
+  --panel: rgba(10, 17, 34, 0.93);
+  --header-bg: rgba(4, 7, 15, 0.85);
+  --panel-shadow: 0 18px 48px rgba(0, 0, 0, 0.6);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --btn-bg: linear-gradient(135deg, #4d8dff, #a78bfa);
+  --btn-fg: #04070f;
+  --btn-shadow: 0 12px 34px rgba(34, 211, 238, 0.28);
+}
+
+/* --------------------------------------------------------------------------
+   3. Palette — Pixel art (Demo Site 3)
+   Cream and ink in light, arcade green and hot pink in dark. Hard edges.
+   -------------------------------------------------------------------------- */
+
+html[data-theme='pixel'] {
+  --bg: #fff3d6;
+  --surface: #ffffff;
+  --surface-strong: #ffe6a3;
+  --text: #241a10;
+  --muted: #7a6248;
+  --primary: #e23d28;
+  --primary-soft: #ffd3c7;
+  --secondary: #17866b;
+  --border: #241a10;
+  --accent: #e23d28;
+  --halo: rgba(226, 61, 40, 0.12);
+  --panel: rgba(255, 255, 255, 0.96);
+  --header-bg: rgba(255, 243, 214, 0.92);
+  --panel-shadow: 8px 8px 0 rgba(36, 26, 16, 0.9);
+  --shadow: 6px 6px 0 rgba(36, 26, 16, 0.9);
+  --edge: 3px;
+  --r-sm: 0px;
+  --r-md: 0px;
+  --r-lg: 0px;
+  --btn-bg: #e23d28;
+  --btn-fg: #ffffff;
+  --btn-shadow: 5px 5px 0 #241a10;
+  --display-font: 'Courier New', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --body-font: 'Courier New', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html[data-theme='pixel'][data-mode='dark'] {
+  --bg: #14101f;
+  --surface: #1e1830;
+  --surface-strong: #2c2348;
+  --text: #f6eedd;
+  --muted: #a493c4;
+  --primary: #7ed957;
+  --primary-soft: #223318;
+  --secondary: #ff6b9d;
+  --border: #0a0712;
+  --accent: #7ed957;
+  --halo: rgba(126, 217, 87, 0.12);
+  --panel: rgba(30, 24, 48, 0.96);
+  --header-bg: rgba(20, 16, 31, 0.92);
+  --panel-shadow: 8px 8px 0 rgba(0, 0, 0, 0.9);
+  --shadow: 6px 6px 0 rgba(0, 0, 0, 0.9);
+  --btn-bg: #7ed957;
+  --btn-fg: #14101f;
+  --btn-shadow: 5px 5px 0 #0a0712;
+}
+
+/* --------------------------------------------------------------------------
+   4. Palette — Clay style (Demo Site 4)
+   Soft terracotta and sage, big radii, deep soft shadows.
+   -------------------------------------------------------------------------- */
+
+html[data-theme='clay'] {
+  --bg: #fdf0e3;
+  --surface: #ffffff;
+  --surface-strong: #ffe7d2;
+  --text: #4a3427;
+  --muted: #8a7160;
+  --primary: #e2725b;
+  --primary-soft: #ffe0d0;
+  --secondary: #6e9e82;
+  --border: #f0d6c0;
+  --accent: #e2725b;
+  --halo: rgba(226, 114, 91, 0.18);
+  --panel: rgba(255, 255, 255, 0.95);
+  --header-bg: rgba(253, 240, 227, 0.9);
+  --panel-shadow: 0 22px 50px rgba(160, 100, 70, 0.24);
+  --shadow: 0 18px 40px rgba(160, 100, 70, 0.2);
+  --r-sm: 14px;
+  --r-md: 24px;
+  --r-lg: 36px;
+  --btn-bg: linear-gradient(135deg, #e2725b, #ef9a7d);
+  --btn-fg: #ffffff;
+  --btn-shadow: 0 14px 30px rgba(226, 114, 91, 0.4);
+  --display-font: 'Inter', system-ui, -apple-system, sans-serif;
+  --body-font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html[data-theme='clay'][data-mode='dark'] {
+  --bg: #2a1f18;
+  --surface: #38291f;
+  --surface-strong: #473427;
+  --text: #f7e8d8;
+  --muted: #c2a794;
+  --primary: #f0866f;
+  --primary-soft: #4a342a;
+  --secondary: #8fb89a;
+  --border: #4a3729;
+  --accent: #f0866f;
+  --halo: rgba(240, 134, 111, 0.16);
+  --panel: rgba(56, 41, 31, 0.95);
+  --header-bg: rgba(42, 31, 24, 0.9);
+  --panel-shadow: 0 22px 50px rgba(0, 0, 0, 0.5);
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  --btn-bg: linear-gradient(135deg, #f0866f, #f7a893);
+  --btn-fg: #2a1f18;
+  --btn-shadow: 0 14px 30px rgba(240, 134, 111, 0.28);
+}
+
+/* --------------------------------------------------------------------------
+   5. Re-skin the shared components
+   styles.css hard-codes warm orange surfaces, so every themed surface is
+   overridden here. The mobile nav panel is handled in its media query.
+   -------------------------------------------------------------------------- */
+
+html[data-theme] body {
+  font-family: var(--body-font);
+  background:
+    radial-gradient(circle at top left, var(--halo), transparent 32%),
+    var(--bg);
+  color: var(--text);
+}
+
+html[data-theme] .site-header {
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+html[data-theme] .brand,
+html[data-theme] h1,
+html[data-theme] h2,
+html[data-theme] h3 {
+  font-family: var(--display-font);
+  color: var(--text);
+}
+
+html[data-theme] .nav-dropdown-menu {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  box-shadow: var(--panel-shadow);
+}
+
+html[data-theme] .nav-dropdown-menu a:hover,
+html[data-theme] .nav-dropdown-menu a:focus-visible {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+html[data-theme] .nav-dropdown-toggle[aria-expanded='true'] {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+html[data-theme] .mobile-nav-toggle {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+html[data-theme] .button {
+  border-radius: var(--r-lg);
+  font-family: var(--body-font);
+}
+
+html[data-theme] .button-primary {
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  box-shadow: var(--btn-shadow);
+}
+
+html[data-theme] .button-secondary {
+  background: var(--surface-strong);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+html[data-theme] .button-secondary:hover,
+html[data-theme] .button-secondary:focus-visible {
+  background: var(--surface);
+}
+
+html[data-theme] .eyebrow,
+html[data-theme] .demo-kicker {
+  color: var(--primary);
+}
+
+html[data-theme] .service-card,
+html[data-theme] .link-card,
+html[data-theme] .blog-card,
+html[data-theme] .process-step,
+html[data-theme] .contact-form,
+html[data-theme] .contact-info {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+html[data-theme] .section-light {
+  background: var(--bg);
+}
+
+html[data-theme] .section-dark {
+  background: var(--surface);
+}
+
+html[data-theme] .site-footer {
+  background: var(--surface-strong);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+html[data-theme] .footer-nav a {
+  color: var(--muted);
+}
+
+html[data-theme] .footer-nav a:hover,
+html[data-theme] .footer-nav a:focus-visible {
+  color: var(--primary);
+}
+
+html[data-theme] .page-loader {
+  background: var(--panel);
+}
+
+html[data-theme] .loader-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--panel-shadow);
+}
+
+/* --------------------------------------------------------------------------
+   6. Demo page building blocks
+   -------------------------------------------------------------------------- */
+
+.demo-hero {
+  position: relative;
+  padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5rem);
+  overflow: hidden;
+}
+
+.demo-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1.1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.demo-title {
+  margin: 0;
+  max-width: 18ch;
+  font-size: clamp(2.4rem, 6vw, 4.25rem);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+.demo-lede {
+  margin: 1.25rem 0 0;
+  max-width: 56ch;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.demo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 2.2rem;
+}
+
+.demo-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.demo-section--alt {
+  background: var(--bg);
+}
+
+.demo-grid {
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.demo-card {
+  position: relative;
+  padding: 1.7rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.demo-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.demo-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.demo-heading {
+  margin: 0 0 2.2rem;
+  max-width: 46ch;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.demo-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-swatch {
+  width: 78px;
+}
+
+.demo-swatch__chip {
+  display: block;
+  height: 62px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--swatch);
+}
+
+.demo-swatch__name {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.demo-swatch__code {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--display-font);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  opacity: 0.75;
+}
+
+.demo-note {
+  margin: 2.4rem 0 0;
+  padding: 1.1rem 1.3rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--r-sm);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Light / dark switcher
+   -------------------------------------------------------------------------- */
+
+.demo-mode {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.demo-mode__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.demo-mode__btn:hover,
+.demo-mode__btn:focus-visible {
+  background: var(--primary-soft);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.demo-mode__icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.demo-mode__icon--sun,
+html[data-theme][data-mode='light'] .demo-mode__icon--moon {
+  display: block;
+}
+
+.demo-mode__icon--moon,
+html[data-theme][data-mode='light'] .demo-mode__icon--sun {
+  display: none;
+}
+
+.header-end {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* --------------------------------------------------------------------------
+/* --------------------------------------------------------------------------
+   8. Extended demo content
+   Building blocks for the longer demo pages: hero tags, a stat strip, a type
+   specimen, a spec table, a checklist, numbered steps, fit panels, an FAQ,
+   a quote, a gallery of the other themes and a closing call to action.
+   -------------------------------------------------------------------------- */
+
+.demo-sub {
+  margin: -1.2rem 0 2.4rem;
+  max-width: 64ch;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.demo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.7rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-tag {
+  padding: 0.34rem 0.78rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.demo-stats {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-stat {
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg);
+}
+
+.demo-stat__value {
+  display: block;
+  font-family: var(--display-font);
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--primary);
+}
+
+.demo-stat__label {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.demo-stat__note {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.demo-spec-layout {
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.demo-specimen {
+  display: grid;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-specimen__row {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: baseline;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.demo-specimen__row:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.demo-specimen__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.demo-specimen__sample {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.demo-specimen__sample--display {
+  font-size: clamp(1.5rem, 3.4vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.demo-specimen__sample--heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.demo-specimen__sample--title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.demo-specimen__sample--body {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.demo-specimen__sample--caption {
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+.demo-specs {
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+
+.demo-spec {
+  display: grid;
+  grid-template-columns: minmax(104px, 0.8fr) minmax(0, 1.3fr);
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.demo-spec dt {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.demo-spec dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.demo-spec code {
+  font-family: var(--display-font);
+  font-size: 0.85em;
+}
+.demo-checklist {
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-check {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.95rem;
+  align-items: start;
+}
+
+.demo-check__mark {
+  display: grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: var(--r-sm);
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.demo-check__mark svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.demo-check h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.demo-check p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.demo-steps {
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: repeat(auto-fit, minmax(228px, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-step {
+  padding: 1.5rem 1.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg);
+}
+
+.demo-step__num {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2.2rem;
+  height: 2.2rem;
+  margin-bottom: 0.9rem;
+  padding: 0 0.5rem;
+  border-radius: var(--r-sm);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--display-font);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.demo-step h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.demo-step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.demo-split {
+  display: grid;
+  gap: 1.3rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.demo-panel {
+  padding: 1.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg);
+}
+
+.demo-panel--avoid {
+  border-style: dashed;
+}
+
+.demo-panel h3 {
+  margin: 0 0 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.demo-panel ul {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-panel li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.demo-panel li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--r-sm);
+  background: var(--primary);
+}
+
+.demo-panel--avoid li::before {
+  background: var(--border);
+}
+
+
+.demo-faq {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 860px;
+  margin: 0;
+}
+
+.demo-faq details {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.demo-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: 1.05rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.demo-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.demo-faq summary::marker {
+  content: '';
+}
+
+.demo-faq summary::after {
+  content: '';
+  flex: none;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-0.15rem);
+  transition: transform 0.2s ease;
+}
+
+.demo-faq details[open] summary::after {
+  transform: rotate(-135deg) translateY(-0.15rem);
+}
+
+.demo-faq summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -3px;
+}
+
+.demo-faq__body {
+  padding: 0 1.3rem 1.25rem;
+}
+
+.demo-faq__body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.demo-quote {
+  margin: 2.6rem 0 0;
+  max-width: 780px;
+  padding: 1.9rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg);
+}
+
+.demo-quote blockquote {
+  margin: 0;
+}
+
+.demo-quote__text {
+  margin: 0;
+  font-size: clamp(1.08rem, 2.4vw, 1.38rem);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.demo-quote__text::before {
+  content: '\201C';
+}
+
+.demo-quote__text::after {
+  content: '\201D';
+}
+
+.demo-quote figcaption {
+  margin-top: 1.1rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.demo-gallery {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100%;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.demo-tile:hover,
+.demo-tile:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: var(--panel-shadow);
+}
+
+.demo-tile__theme {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.demo-tile__name {
+  font-family: var(--display-font);
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.demo-tile__desc {
+  margin: 0;
+  flex: 1;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.demo-tile__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.demo-tile__go::after {
+  content: '\2192';
+  transition: transform 0.2s ease;
+}
+
+.demo-tile:hover .demo-tile__go::after,
+.demo-tile:focus-visible .demo-tile__go::after {
+  transform: translateX(4px);
+}
+
+.demo-cta {
+  text-align: center;
+}
+
+.demo-cta .demo-heading,
+.demo-cta .demo-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.demo-cta .demo-actions {
+  justify-content: center;
+}
+
+.demo-cta__note {
+  margin: 1.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+
+/* ---- Minimalism: the same hairline treatment on the new blocks ---- */
+
+html[data-theme='minimalism'] .demo-stat,
+html[data-theme='minimalism'] .demo-step,
+html[data-theme='minimalism'] .demo-panel,
+html[data-theme='minimalism'] .demo-tile,
+html[data-theme='minimalism'] .demo-quote {
+  padding: 1.4rem 0 0;
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--text);
+  border-radius: 0;
+}
+
+html[data-theme='minimalism'] .demo-faq details {
+  background: transparent;
+  border-radius: 0;
+}
+
+html[data-theme='minimalism'] .demo-panel--avoid {
+  border-top-style: dashed;
+}
+
+html[data-theme='minimalism'] .demo-tag {
+  border-radius: 0;
+}
+
+html[data-theme='minimalism'] .demo-check__mark {
+  border-radius: 0;
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* ---- Futuristic: halo and edge light on the new blocks ---- */
+
+html[data-theme='futuristic'] .demo-stat,
+html[data-theme='futuristic'] .demo-step,
+html[data-theme='futuristic'] .demo-panel {
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--border), 0 18px 44px var(--halo);
+}
+
+html[data-theme='futuristic'] .demo-check__mark {
+  box-shadow: 0 0 0 1px var(--accent), 0 0 18px var(--halo);
+}
+
+html[data-theme='futuristic'] .demo-faq details[open] {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 18px 40px var(--halo);
+}
+
+/* ---- Pixel art: chunky borders and hard lifts ---- */
+
+html[data-theme='pixel'] .demo-stat,
+html[data-theme='pixel'] .demo-step,
+html[data-theme='pixel'] .demo-panel,
+html[data-theme='pixel'] .demo-tile,
+html[data-theme='pixel'] .demo-quote,
+html[data-theme='pixel'] .demo-faq details,
+html[data-theme='pixel'] .demo-tag {
+  border-width: 3px;
+  border-radius: 0;
+}
+
+html[data-theme='pixel'] .demo-stat,
+html[data-theme='pixel'] .demo-step,
+html[data-theme='pixel'] .demo-panel,
+html[data-theme='pixel'] .demo-quote {
+  box-shadow: var(--shadow);
+}
+
+html[data-theme='pixel'] .demo-tile:hover,
+html[data-theme='pixel'] .demo-tile:focus-visible {
+  transform: translate(-3px, -3px);
+  border-color: var(--border);
+  box-shadow: 8px 8px 0 var(--border);
+}
+
+html[data-theme='pixel'] .demo-tile__go::after {
+  content: '\00BB';
+}
+
+html[data-theme='pixel'] .demo-step__num {
+  border: 3px solid var(--border);
+  box-shadow: 3px 3px 0 var(--border);
+}
+
+/* ---- Clay: moulded surfaces on the new blocks ---- */
+
+html[data-theme='clay'] .demo-stat,
+html[data-theme='clay'] .demo-step,
+html[data-theme='clay'] .demo-panel,
+html[data-theme='clay'] .demo-quote,
+html[data-theme='clay'] .demo-faq details {
+  background: linear-gradient(160deg, var(--surface), var(--bg));
+  box-shadow: var(--shadow), inset 0 2px 0 rgba(255, 255, 255, 0.6);
+}
+
+html[data-theme='clay'][data-mode='dark'] .demo-stat,
+html[data-theme='clay'][data-mode='dark'] .demo-step,
+html[data-theme='clay'][data-mode='dark'] .demo-panel,
+html[data-theme='clay'][data-mode='dark'] .demo-quote,
+html[data-theme='clay'][data-mode='dark'] .demo-faq details {
+  box-shadow: var(--shadow), inset 0 2px 0 rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme='clay'] .demo-tile:hover,
+html[data-theme='clay'] .demo-tile:focus-visible {
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* ---- Extended content on small screens ---- */
+
+@media (max-width: 860px) {
+  .demo-spec-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.2rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .demo-specimen__row,
+  .demo-spec {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.3rem;
+  }
+
+  .demo-quote {
+    padding: 1.5rem 1.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-tile,
+  .demo-tile:hover,
+  .demo-tile:focus-visible,
+  .demo-faq summary::after,
+  .demo-tile__go::after {
+    transition: none;
+    transform: none;
+  }
+}
+
+
+
+
+   /* 9. Character — Minimalism
+   -------------------------------------------------------------------------- */
+
+html[data-theme='minimalism'] .demo-kicker {
+  color: var(--muted);
+  letter-spacing: 0.24em;
+}
+
+html[data-theme='minimalism'] .demo-title {
+  letter-spacing: -0.045em;
+  font-weight: 800;
+}
+
+html[data-theme='minimalism'] .demo-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: var(--border);
+}
+
+html[data-theme='minimalism'] .demo-card {
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--text);
+  border-radius: 0;
+  padding: 1.5rem 0 0;
+}
+
+html[data-theme='minimalism'] .demo-section {
+  border-top: 1px solid var(--border);
+}
+
+html[data-theme='minimalism'] .demo-swatch__chip,
+html[data-theme='minimalism'] .demo-note {
+  border-radius: 0;
+}
+
+/* --------------------------------------------------------------------------
+   10. Character — Futuristic
+   -------------------------------------------------------------------------- */
+
+html[data-theme='futuristic'] .demo-title {
+  background: linear-gradient(120deg, var(--text) 30%, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html[data-theme='futuristic'] .demo-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(circle at 70% 25%, #000 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 70% 25%, #000 0%, transparent 70%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+html[data-theme='futuristic'] .demo-hero > .container,
+html[data-theme='pixel'] .demo-hero > .container,
+html[data-theme='clay'] .demo-hero > .container {
+  position: relative;
+}
+
+html[data-theme='futuristic'] .demo-card {
+  background: var(--surface);
+  box-shadow:
+    0 0 0 1px var(--border),
+    0 18px 44px var(--halo);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+html[data-theme='futuristic'] .demo-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 22px 56px var(--halo);
+}
+
+html[data-theme='futuristic'] .demo-kicker::before {
+  content: '';
+  width: 26px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   11. Character — Pixel art
+   -------------------------------------------------------------------------- */
+
+html[data-theme='pixel'] .demo-kicker {
+  letter-spacing: 0.1em;
+}
+
+html[data-theme='pixel'] .demo-title {
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-shadow: 4px 4px 0 var(--primary-soft);
+}
+
+html[data-theme='pixel'] .demo-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, var(--surface-strong) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--surface-strong) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--surface-strong) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--surface-strong) 75%);
+  background-size: 32px 32px;
+  background-position: 0 0, 0 16px, 16px -16px, -16px 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+html[data-theme='pixel'] .demo-card {
+  background: var(--surface);
+  border: 3px solid var(--border);
+  border-radius: 0;
+  box-shadow: var(--shadow);
+}
+
+html[data-theme='pixel'] .demo-swatch__chip {
+  border: 3px solid var(--border);
+  border-radius: 0;
+}
+
+html[data-theme='pixel'] .demo-note {
+  border: 3px dashed var(--border);
+  border-radius: 0;
+}
+
+html[data-theme='pixel'] .demo-mode__btn,
+html[data-theme='pixel'] .button {
+  border-radius: 0;
+}
+
+html[data-theme='pixel'] .button:hover,
+html[data-theme='pixel'] .button:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--border);
+}
+
+/* --------------------------------------------------------------------------
+   12. Character — Clay style
+   -------------------------------------------------------------------------- */
+
+html[data-theme='clay'] .demo-card {
+  background: linear-gradient(160deg, var(--surface), var(--bg));
+  border: 1px solid var(--border);
+  box-shadow:
+    var(--shadow),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+html[data-theme='clay'][data-mode='dark'] .demo-card {
+  box-shadow:
+    var(--shadow),
+    inset 0 2px 0 rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme='clay'] .demo-card:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+html[data-theme='clay'] .demo-kicker {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+
+html[data-theme='clay'] .demo-swatch__chip {
+  border: none;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+html[data-theme='clay'] .demo-mode__btn {
+  border: none;
+  box-shadow: var(--shadow);
+}
+
+html[data-theme='clay'] .demo-hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--primary-soft), transparent 70%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   13. Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 720px) {
+  html[data-theme] .site-nav {
+    background: var(--panel);
+    border-color: var(--border);
+    box-shadow: var(--panel-shadow);
+  }
+
+  html[data-theme='minimalism'] .demo-card {
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-mode__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .demo-mode__btn {
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme] .demo-card,
+  html[data-theme] .demo-card:hover {
+    transition: none;
+    transform: none;
+  }
+}

@@ -1,0 +1,52 @@
+---
+layout: zlog-base
+---
+{% assign posts = site.posts %}
+{% if posts.size > 0 %}
+  {% assign latest = posts.first %}
+{% endif %}
+<section class="zlog-masthead">
+  <div class="container">
+    <!-- <p class="zlog-kicker">
+      {% if latest %}Issue {{ posts.size | plus: 1 }} &middot; {{ latest.date | date: '%B %Y' }}{% else %}Fresh off the press{% endif %}
+    </p> -->
+    <h1 class="zlog-title">The Zlog</h1>
+    <p class="zlog-lede">Notes from the ZeroFy workshop on website strategy, design, deployment and the unglamorous work of keeping a site healthy after launch.</p>
+  </div>
+</section>
+
+<section class="zlog-stream">
+  <div class="container">
+    {% if posts.size > 0 %}
+      <ul class="zlog-list">
+        {% for post in posts %}
+          <li class="zlog-item reveal">
+            {% assign post_words = post.content | number_of_words %}
+            {% assign post_minutes = post_words | divided_by: 220 %}
+            {% if post_minutes < 1 %}{% assign post_minutes = 1 %}{% endif %}
+            <article class="zlog-card">
+              <p class="zlog-card__meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d %b %Y' }}</time>
+                <span aria-hidden="true">&middot;</span>
+                <span>{{ post_minutes }} min read</span>
+                {% if post.tags.size > 0 %}
+                  <span aria-hidden="true">&middot;</span>
+                  <span>{{ post.tags | join: ', ' }}</span>
+                {% endif %}
+              </p>
+              <h2 class="zlog-card__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+              <p class="zlog-card__excerpt">{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 190 }}</p>
+              <p class="zlog-card__more"><a href="{{ post.url | relative_url }}">Read the entry<span aria-hidden="true"> &rarr;</span></a></p>
+            </article>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <p class="zlog-feed-note">
+        Enjoyed this one? <a href="{{ '/contact.html' | relative_url }}">Tell us what to write about next</a>.
+      </p>
+    {% else %}
+      <p class="zlog-empty">The first entry is still on the workbench. Check back shortly, or <a href="{{ '/contact.html' | relative_url }}">ask us to hurry up</a>.</p>
+    {% endif %}
+  </div>
+</section>

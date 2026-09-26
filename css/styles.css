@@ -1,20 +1,38 @@
 :root {
   color-scheme: light;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #1f2430;
-  background: #fffaf5;
-  --bg: #fffaf5;
-  --surface: #ffffff;
-  --surface-strong: #fff3e6;
-  --text: #1f2430;
-  --muted: #647084;
-  --primary: #f97316;
-  --primary-soft: #ffedd5;
-  --secondary: #7c3aed;
-  --border: #f2e4d3;
-  --shadow: 0 24px 80px rgba(44, 38, 24, 0.08);
+  color: #2b2b1c;
+  background: #f0e7d4;
+  /* The base palette. Every page that sets data-theme overrides this whole set
+     through css/demo-themes.css; it is kept complete so any rule below can
+     read a token without caring whether a theme has been loaded. */
+  --bg: #f0e7d4;
+  --surface: #f8f1e0;
+  --surface-strong: #e3d4b4;
+  --text: #2b2b1c;
+  --muted: #5f5e40;
+  --primary: #486424;
+  --primary-soft: #dfe7c8;
+  --secondary: #a04a2c;
+  --border: #2b2b1c;
+  --accent: #d99a1e;
+  --on-accent: #2b2b1c;
+  --halo: rgba(72, 100, 36, 0.12);
+  --panel: rgba(248, 241, 224, 0.96);
+  --header-bg: rgba(240, 231, 212, 0.92);
+  --panel-shadow: 6px 6px 0 rgba(43, 43, 28, 0.9);
+  --shadow: 5px 5px 0 rgba(43, 43, 28, 0.85);
+  --edge: 2px;
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-lg: 6px;
+  --btn-bg: #486424;
+  --btn-fg: #f8f1e0;
+  --btn-shadow: 4px 4px 0 #2b2b1c;
+  --display-font: 'Georgia', 'Times New Roman', serif;
+  --body-font: 'Georgia', 'Times New Roman', serif;
 }
 
 * {
@@ -29,7 +47,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(249, 115, 22, 0.10), transparent 28%),
+    radial-gradient(circle at top left, var(--halo), transparent 28%),
     var(--bg);
   color: var(--text);
 }
@@ -61,7 +79,7 @@ textarea {
   z-index: 999;
   display: grid;
   place-items: center;
-  background: rgba(255, 250, 245, 0.96);
+  background: var(--panel);
   backdrop-filter: blur(8px);
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
@@ -93,8 +111,8 @@ textarea {
   gap: 1rem;
   justify-items: center;
   padding: 2rem;
-  border-radius: 24px;
-  background: white;
+  border-radius: var(--r-md);
+  background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
@@ -134,8 +152,8 @@ textarea {
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--r-md);
+  background: var(--panel);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
@@ -157,7 +175,6 @@ textarea {
   font-weight: 700;
   letter-spacing: -0.02em;
 }
-
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -180,9 +197,9 @@ textarea {
   gap: 0.45rem;
   margin-bottom: 1rem;
   padding: 0.55rem 0.9rem;
-  border-radius: 999px;
+  border-radius: var(--r-lg);
   background: var(--primary-soft);
-  border: 1px solid rgba(249, 115, 22, 0.18);
+  border: 1px solid var(--border);
   color: var(--primary);
   font-size: 0.95rem;
   font-weight: 600;
@@ -201,10 +218,10 @@ textarea {
   align-items: center;
   gap: 0.75rem;
   padding: 0.9rem 1.1rem;
-  border-radius: 16px;
-  background: rgba(17, 24, 39, 0.96);
-  color: #fff;
-  box-shadow: 0 18px 45px rgba(17, 24, 39, 0.18);
+  border-radius: var(--r-md);
+  background: var(--text);
+  color: var(--bg);
+  box-shadow: var(--shadow);
   opacity: 0;
   transform: translateY(16px);
   pointer-events: none;
@@ -222,8 +239,8 @@ textarea {
   border-radius: 50%;
   display: inline-grid;
   place-items: center;
-  background: rgba(34, 197, 94, 0.18);
-  color: #86efac;
+  background: var(--primary-soft);
+  color: var(--primary);
   font-weight: 700;
 }
 
@@ -237,9 +254,9 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(255, 250, 245, 0.9);
+  background: var(--header-bg);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(20, 24, 40, 0.06);
+  border-bottom: 1px solid var(--border);
 }
 
 .header-inner {
@@ -290,6 +307,17 @@ textarea {
 
 .site-nav a:hover::after,
 .site-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* The current page is marked in the header and footer nav by the markup. */
+.site-nav a[aria-current='page'],
+.footer-nav a[aria-current='page'] {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.site-nav a[aria-current='page']::after {
   transform: scaleX(1);
 }
 
@@ -350,7 +378,7 @@ textarea {
 .nav-dropdown-toggle:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
-  border-radius: 6px;
+  border-radius: var(--r-sm);
 }
 
 .nav-dropdown.open .nav-dropdown-toggle::after {
@@ -366,11 +394,11 @@ textarea {
   margin: 0;
   padding: 0.4rem;
   list-style: none;
-  background: rgba(255, 250, 245, 0.98);
+  background: var(--panel);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(20, 24, 40, 0.08);
-  border-radius: 16px;
-  box-shadow: 0 18px 45px rgba(31, 36, 48, 0.12);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--panel-shadow);
   opacity: 0;
   visibility: hidden;
   transform: translate(-50%, -8px) scale(0.98);
@@ -400,7 +428,7 @@ textarea {
   display: block;
   width: 100%;
   padding: 0.6rem 0.75rem;
-  border-radius: 12px;
+  border-radius: var(--r-sm);
   color: var(--text);
   font-weight: 500;
   white-space: nowrap;
@@ -484,8 +512,8 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  border-radius: 999px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
   padding: 0.95rem 1.5rem;
   font-weight: 600;
   cursor: pointer;
@@ -495,18 +523,18 @@ textarea {
 .button:hover,
 .button:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(31, 36, 48, 0.12);
+  box-shadow: var(--shadow);
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--primary), #fb923c);
-  color: white;
-  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.18);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  box-shadow: var(--btn-shadow);
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  box-shadow: 0 14px 30px rgba(249, 115, 22, 0.24);
+  box-shadow: var(--btn-shadow);
 }
 
 .button-secondary {
@@ -517,13 +545,13 @@ textarea {
 
 .button-secondary:hover,
 .button-secondary:focus-visible {
-  background: #fff;
+  background: var(--surface);
 }
 
 .hero-card {
-  background: linear-gradient(135deg, rgba(255,255,255,1), rgba(255, 243, 230, 0.95));
-  border: 1px solid rgba(249, 115, 22, 0.16);
-  border-radius: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
   box-shadow: var(--shadow);
   padding: 1.4rem;
 }
@@ -535,10 +563,10 @@ textarea {
 
 .browser-window {
   border: 1px solid var(--border);
-  border-radius: 24px;
-  background: #fffdf9;
+  border-radius: var(--r-sm);
+  background: var(--bg);
   padding: 0.8rem;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .browser-top {
@@ -551,15 +579,15 @@ textarea {
   width: 0.7rem;
   height: 0.7rem;
   border-radius: 50%;
-  background: #f4c7a5;
+  background: var(--secondary);
 }
 
 .browser-top span:nth-child(2) {
-  background: #f6b26b;
+  background: var(--accent);
 }
 
 .browser-top span:nth-child(3) {
-  background: #f59e0b;
+  background: var(--primary);
 }
 
 .browser-body {
@@ -568,8 +596,8 @@ textarea {
 }
 
 .preview-panel {
-  border-radius: 16px;
-  background: linear-gradient(135deg, #fff3e6, #fffdf9);
+  border-radius: var(--r-sm);
+  background: var(--surface-strong);
   border: 1px solid var(--border);
   padding: 1rem;
 }
@@ -593,8 +621,8 @@ textarea {
 .mini-bars span {
   display: block;
   height: 0.6rem;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #f9c38f, #f97316);
+  border-radius: var(--r-sm);
+  background: var(--primary);
 }
 
 .mini-bars span:nth-child(2) {
@@ -612,10 +640,10 @@ textarea {
 }
 
 .mini-card {
-  border-radius: 14px;
+  border-radius: var(--r-sm);
   padding: 0.7rem;
   text-align: center;
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--border);
   font-size: 0.85rem;
   font-weight: 600;
@@ -660,9 +688,9 @@ textarea {
 .process-step,
 .contact-form,
 .contact-info {
-  background: white;
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: var(--r-md);
   padding: 1.75rem;
 }
 
@@ -679,7 +707,7 @@ textarea {
 
 .link-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(29, 78, 216, 0.25);
+  border-color: var(--primary);
 }
 
 .feature-list,
@@ -704,7 +732,7 @@ textarea {
   height: 2.25rem;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: var(--r-sm);
   background: var(--primary-soft);
   color: var(--primary);
   font-weight: 700;
@@ -754,9 +782,9 @@ textarea {
 .contact-form textarea {
   width: 100%;
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--r-sm);
   padding: 1rem;
-  background: white;
+  background: var(--bg);
   color: var(--text);
 }
 
@@ -791,6 +819,168 @@ footer a:focus-visible {
   transform: translateY(-1px);
 }
 
+/* The "New" flag on the Zlog link, raised as a superscript. It reads the same
+   tokens as the rest of the chrome, so every demo palette re-skins it with no
+   per-theme rules. */
+sup.footer-nav__badge {
+  display: inline-block;
+  margin-left: 0.25rem;
+  padding: 0.05rem 0.3rem;
+  border-radius: var(--r-sm);
+  background: var(--btn-bg, var(--primary, #486424));
+  color: var(--btn-fg, #f8f1e0);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+  text-transform: uppercase;
+  vertical-align: super;
+}
+
+/* --- Work showcase (home page) --------------------------------------------
+   A separate grid from the others, because this list grows: auto-fit keeps a
+   single row while there are few cards and reflows on its own as more are
+   added, with no media query to keep in step. */
+
+/* --- Home page section rhythm --------------------------------------------
+   The shared .section-* rule pads every section top AND bottom, so stacked
+   sections add two paddings together and double the gap between them. Here
+   the sections carry no vertical padding and the spacing comes from a single
+   --home-gap, applied identically at every boundary.
+
+   Every card on this page is white, so each section sits on the cream
+   .section-light surface. That keeps the cards lifted off the background;
+   putting them on .section-dark (also white) would flatten them into it.
+   Because the sections now share one colour, a hairline marks each boundary.
+   It is drawn as a pseudo-element split across the gap, so it sits exactly
+   midway and all three boundaries stay identical. */
+
+.home-main {
+  display: flex;
+  flex-direction: column;
+  --home-gap: clamp(4rem, 6.5vw, 6.5rem);
+}
+
+.home-main > section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.home-main > section + section::before {
+  content: '';
+  display: block;
+  height: 1px;
+  margin: calc(var(--home-gap) / 2) 0;
+  background: var(--border);
+}
+
+/* The first and last sections still need to breathe away from the sticky
+   header and the footer, which the gap does not cover. */
+.home-main > section:first-child {
+  padding-top: clamp(3.5rem, 7vw, 6rem);
+}
+
+.home-main > section:last-child {
+  padding-bottom: clamp(3.5rem, 7vw, 6rem);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.2rem;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+.work-card__status {
+  margin: 0;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--r-lg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.work-card__status--live {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.work-card__status--soon {
+  background: transparent;
+  border: 1px dashed var(--secondary);
+  color: var(--secondary);
+}
+
+.work-card__name {
+  margin: 0.3rem 0 0;
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+.work-card__sep {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.work-card__host {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+.work-card__desc {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+}
+
+/* Pushes the action to the bottom so the cards line up even when the copy
+   above it is a different length. */
+.work-card__link,
+.work-card__soon-note {
+  margin-top: auto;
+  padding-top: 0.6rem;
+}
+
+.work-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--primary);
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.work-card__link:hover,
+.work-card__link:focus-visible {
+  transform: translateX(3px);
+}
+
+.work-card__soon-note {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .card-grid,
@@ -808,7 +998,7 @@ footer a:focus-visible {
   .process-step,
   .contact-form,
   .contact-info {
-    border-radius: 20px;
+    border-radius: var(--r-md);
   }
 }
 
@@ -842,11 +1032,11 @@ footer a:focus-visible {
     margin: 0;
     pointer-events: none;
     transform: translateY(-8px) scale(0.98);
-    background: rgba(255, 250, 245, 0.97);
+    background: var(--panel);
     backdrop-filter: blur(14px);
-    border: 1px solid rgba(20, 24, 40, 0.08);
-    border-radius: 20px;
-    box-shadow: 0 18px 45px rgba(31, 36, 48, 0.12);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    box-shadow: var(--panel-shadow);
     transition: max-height 0.25s ease, opacity 0.2s ease, transform 0.25s ease, padding 0.25s ease;
   }
 
@@ -863,7 +1053,7 @@ footer a:focus-visible {
   .site-nav a {
     width: 100%;
     padding: 0.7rem 0.2rem;
-    border-radius: 12px;
+    border-radius: var(--r-sm);
   }
 
   .site-nav a:hover,
@@ -884,7 +1074,7 @@ footer a:focus-visible {
     width: 100%;
     justify-content: space-between;
     padding: 0.7rem 0.2rem;
-    border-radius: 12px;
+    border-radius: var(--r-sm);
   }
 
   .nav-dropdown-toggle::before {
@@ -944,7 +1134,8 @@ footer a:focus-visible {
     justify-content: center;
     gap: 0.45rem;
     padding: 0.6rem 0.8rem;
-    border-radius: 999px;
+    border-radius: var(--r-sm);
+    border: 2px solid var(--border);
     background: var(--primary-soft);
     color: var(--primary);
     min-width: 84px;
@@ -962,5 +1153,14 @@ footer a:focus-visible {
 
   .site-footer {
     padding-top: 3rem;
+  }
+}
+
+
+@media (max-width: 1000px) and (min-width: 721px) {
+  /* The nav gained Zlog and Zorum, so ease the gap before the mobile menu
+     takes over at 720px. Keeps the demo mode switcher on the same row. */
+  .site-nav {
+    gap: 1rem;
   }
 }

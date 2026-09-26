@@ -1,0 +1,509 @@
+/* ==========================================================================
+   The Zlog — ZeroFy blog theme (Retro)
+   The palette itself is not defined here. Every page in _layouts/zlog-base.html
+   carries data-theme="zerofy", so css/demo-themes.css supplies the exact same
+   tokens as the static marketing pages (oat paper, avocado and harvest amber,
+   hard offset shadows). This file only adds the blog components on top of that
+   palette, and so follows light/dark automatically through the tokens.
+   ========================================================================== */
+
+.zlog-body {
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--halo) 2px, transparent 2px);
+  background-size: 16px 16px;
+  background-attachment: fixed;
+}
+
+/* --- Masthead ------------------------------------------------------------ */
+
+.zlog-masthead {
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2rem, 4vw, 3rem);
+  border-bottom: 3px double var(--border);
+  text-align: center;
+}
+
+.zlog-kicker {
+  display: inline-block;
+  margin: 0 0 1.1rem;
+  padding: 0.35rem 0.9rem;
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: var(--on-accent, var(--text));
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.zlog-kicker a {
+  color: inherit;
+}
+
+.zlog-title {
+  margin: 0;
+  font-family: var(--display-font);
+  font-style: italic;
+  font-size: clamp(2.6rem, 9vw, 4.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.zlog-lede {
+  max-width: 56ch;
+  margin: 1.4rem auto 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.12rem);
+}
+
+/* --- Index list ---------------------------------------------------------- */
+
+.zlog-stream {
+  padding: clamp(2.5rem, 5vw, 4rem) 0 0;
+}
+
+.zlog-list {
+  display: grid;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.zlog-card {
+  display: grid;
+  gap: 0.8rem;
+  height: 100%;
+  padding: 1.6rem 1.7rem;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.zlog-item:hover .zlog-card {
+  transform: translate(-2px, -2px);
+}
+
+.zlog-card__meta,
+.zlog-article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--display-font);
+  font-size: 0.82rem;
+  font-style: italic;
+  letter-spacing: 0.03em;
+}
+
+.zlog-card__title {
+  margin: 0;
+  font-family: var(--display-font);
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  font-style: italic;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.zlog-card__title a {
+  color: var(--text);
+  background-image: linear-gradient(var(--primary), var(--primary));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 2px;
+  transition: color 0.2s ease, background-size 0.25s ease;
+}
+
+.zlog-card__title a:hover,
+.zlog-card__title a:focus-visible {
+  color: var(--primary);
+  background-size: 100% 2px;
+}
+
+.zlog-card__excerpt {
+  margin: 0;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.zlog-card__more {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.zlog-card__more a,
+.zlog-feed-note a,
+.zlog-back a {
+  color: var(--primary);
+}
+
+.zlog-card__more a:hover,
+.zlog-card__more a:focus-visible,
+.zlog-feed-note a:hover,
+.zlog-back a:hover {
+  text-decoration: underline;
+}
+
+.zlog-feed-note,
+.zlog-back {
+  margin: 2.5rem 0 0;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.zlog-empty {
+  margin: 0;
+  padding: 2.5rem;
+  border: 2px dashed var(--border);
+  border-radius: var(--r-md);
+  text-align: center;
+  color: var(--muted);
+}
+
+
+/* --- Single post --------------------------------------------------------- */
+
+.zlog-article__head {
+  padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(1.5rem, 3vw, 2.25rem);
+  border-bottom: 3px double var(--border);
+  text-align: center;
+}
+
+.zlog-article__head .zlog-title {
+  max-width: 22ch;
+  margin: 0 auto;
+}
+
+.zlog-article__meta {
+  justify-content: center;
+  margin-top: 1.1rem;
+  font-style: normal;
+}
+
+.zlog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.zlog-tag {
+  padding: 0.22rem 0.6rem;
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--primary-soft);
+  color: var(--text);
+  font-family: var(--display-font);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.zlog-prose {
+  max-width: 70ch;
+  margin: 0 auto;
+  padding-top: clamp(2rem, 4vw, 3rem);
+  font-size: 1.05rem;
+}
+
+.zlog-prose h2,
+.zlog-prose h3 {
+  font-family: var(--display-font);
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+.zlog-prose h2 {
+  margin-top: 2.6rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px double var(--border);
+  font-size: clamp(1.5rem, 3.4vw, 1.9rem);
+}
+
+.zlog-prose h3 {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+}
+
+.zlog-prose p {
+  max-width: none;
+  margin-bottom: 1.15rem;
+}
+
+.zlog-prose a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.zlog-prose ul,
+.zlog-prose ol {
+  margin: 0 0 1.15rem;
+  padding-left: 1.35rem;
+}
+
+.zlog-prose li {
+  margin-bottom: 0.5rem;
+}
+
+.zlog-prose blockquote {
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--border);
+  border-left-width: 6px;
+  border-radius: var(--r-sm);
+  background: var(--surface-strong);
+  font-family: var(--display-font);
+  font-style: italic;
+}
+
+.zlog-prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.zlog-prose code {
+  padding: 0.12rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface-strong);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
+
+.zlog-prose pre {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  padding: 1.1rem 1.25rem;
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow);
+}
+
+.zlog-prose pre code {
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 0.88rem;
+}
+
+.zlog-prose table {
+  width: 100%;
+  margin: 1.6rem 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.zlog-prose th,
+.zlog-prose td {
+  padding: 0.6rem 0.75rem;
+  border: 2px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.zlog-prose th {
+  background: var(--accent);
+  color: var(--on-accent, var(--text));
+  font-family: var(--display-font);
+  letter-spacing: 0.04em;
+}
+
+.zlog-prose hr {
+  margin: 2.5rem 0;
+  border: none;
+  border-top: 3px double var(--border);
+}
+
+.zlog-prose img {
+  display: block;
+  width: 50%;
+  height: auto;
+  margin: 0.9rem auto 0;
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow);
+}
+
+.zlog-prose figure {
+  margin: 2.5rem 0;
+}
+
+.zlog-prose figcaption {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+
+/* --- Share ---------------------------------------------------------------- */
+
+.zlog-share {
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+  padding-top: 2rem;
+  border-top: 3px double var(--border);
+}
+
+.zlog-share__heading {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-family: var(--display-font);
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.zlog-share__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.zlog-share__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.9rem;
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--display-font);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--border);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease, color 0.15s ease;
+}
+
+.zlog-share__btn:hover,
+.zlog-share__btn:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--border);
+  background: var(--accent);
+  color: var(--on-accent, var(--text));
+}
+
+.zlog-share__btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.zlog-share__btn--copy {
+  background: var(--primary-soft);
+}
+
+/* Confirmation state, using the brick red secondary so it reads as "done"
+   without borrowing the avocado used for hover. */
+.zlog-share__btn--copy.is-copied {
+  background: var(--secondary);
+  color: var(--surface);
+  transform: none;
+  box-shadow: 3px 3px 0 var(--border);
+}
+
+
+/* --- Previous / next ----------------------------------------------------- */
+
+.zlog-postnav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+  padding-top: 2rem;
+  border-top: 3px double var(--border);
+}
+
+.zlog-postnav__link {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1rem 1.2rem;
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.zlog-postnav__link:hover,
+.zlog-postnav__link:focus-visible {
+  transform: translate(-2px, -2px);
+}
+
+.zlog-postnav__link.is-empty {
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.zlog-postnav__link--next {
+  text-align: right;
+}
+
+.zlog-postnav__dir {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.zlog-postnav__title {
+  font-family: var(--display-font);
+  font-style: italic;
+  line-height: 1.25;
+}
+
+/* --- Footer, retro flavoured --------------------------------------------- */
+
+.zlog-footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.zlog-footer .company-name,
+.zlog-footer .footer-nav a {
+  color: var(--primary);
+}
+
+/* --- Responsive ---------------------------------------------------------- */
+
+@media (max-width: 720px) {
+  .zlog-postnav {
+    grid-template-columns: 1fr;
+  }
+
+  .zlog-postnav__link--next {
+    text-align: left;
+  }
+
+  .zlog-prose table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="zerofy" data-mode="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f0e7d4" />
   <title>Page not found | ZeroFy</title>
   <meta name="description" content="The page you are looking for cannot be found. Return to the ZeroFy homepage." />
   <link rel="icon" href="favicon/favicon.ico" sizes="any" />
@@ -10,10 +11,23 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
   <link rel="manifest" href="favicon/site.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/demo-themes.css" />
+  <script>
+    // Resolve the saved colour mode before first paint so the page never flashes.
+    // The key is shared with the demos and the Zlog, so all of them follow the
+    // same choice.
+    (function () {
+      var stored = null;
+      try {
+        stored = localStorage.getItem('zerofy-demo-mode');
+      } catch (error) {
+        stored = null;
+      }
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-mode', stored || (prefersDark ? 'dark' : 'light'));
+    })();
+  </script>
 </head>
 <body>
   <div id="page-transition" class="page-transition" aria-hidden="true"></div>
@@ -42,5 +56,6 @@
       });
     }
   </script>
+  <script src="js/theme.js"></script>
 </body>
 </html>

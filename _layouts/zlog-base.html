@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="zerofy" data-mode="light">
+<head>
+  {% include zlog-head.html %}
+</head>
+<body class="zlog-body">
+  <div id="page-transition" class="page-transition" aria-hidden="true"></div>
+
+  <div id="page-loader" class="page-loader" aria-hidden="true">
+    <div class="loader-card">
+      <div class="loader-ring"></div>
+      <p>Loading ZeroFy</p>
+    </div>
+  </div>
+
+  {% include zlog-header.html %}
+
+  <main class="zlog-main">
+    {{ content }}
+  </main>
+
+  {% include zlog-footer.html %}
+
+  <script src="{{ '/js/script.js' | relative_url }}"></script>
+  <script src="{{ '/js/theme.js' | relative_url }}"></script>
+</body>
+</html>

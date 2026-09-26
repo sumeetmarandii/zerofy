@@ -1,9 +1,11 @@
 /* ==========================================================================
-   ZeroFy demo themes
+   ZeroFy themes
 
-   Loaded only by demo-site-*.html, after styles.css. Each theme redefines the
-   shared design tokens so the common header, nav, buttons and footer follow
-   the palette automatically, then layers on its own character.
+   Loaded after styles.css by every page that sets data-theme: the eight
+   demo-site-*.html samples, the static marketing pages (the 'zerofy' theme)
+   and the Zlog. Each theme redefines the shared design tokens so the common
+   header, nav, buttons and footer follow the palette automatically, then
+   layers on its own character.
    ========================================================================== */
 
 html[data-theme] {
@@ -447,9 +449,71 @@ html[data-theme='editorial'][data-mode='dark'] {
    -------------------------------------------------------------------------- */
 
 /* --------------------------------------------------------------------------
+   4g. Palette — ZeroFy (the live site and the Zlog)
+   Retro, in an avocado-harvest combination. Same character as Demo Site 5
+   (Georgia, 2px ink borders, hard offset shadows, small radii) in a colour
+   combination of its own, so the marketing pages and the blog read as one
+   printed piece while the eight demos stay eight separate samples.
+
+   Paper stock in both modes, like Retro and Editorial. --border is the ink
+   itself, which is what makes the heavy rules work.
+   -------------------------------------------------------------------------- */
+
+html[data-theme='zerofy'] {
+  --bg: #f0e7d4;
+  --surface: #f8f1e0;
+  --surface-strong: #e3d4b4;
+  --text: #2b2b1c;
+  --muted: #5f5e40;
+  --primary: #486424;
+  --primary-soft: #dfe7c8;
+  --secondary: #a04a2c;
+  --border: #2b2b1c;
+  --accent: #d99a1e;
+  --on-accent: #2b2b1c;
+  --halo: rgba(72, 100, 36, 0.12);
+  --panel: rgba(248, 241, 224, 0.96);
+  --header-bg: rgba(240, 231, 212, 0.92);
+  --panel-shadow: 6px 6px 0 rgba(43, 43, 28, 0.9);
+  --shadow: 5px 5px 0 rgba(43, 43, 28, 0.85);
+  --edge: 2px;
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-lg: 6px;
+  --btn-bg: #486424;
+  --btn-fg: #f8f1e0;
+  --btn-shadow: 4px 4px 0 #2b2b1c;
+  --display-font: 'Georgia', 'Times New Roman', serif;
+  --body-font: 'Georgia', 'Times New Roman', serif;
+}
+
+html[data-theme='zerofy'][data-mode='dark'] {
+  --bg: #1e1f16;
+  --surface: #27291d;
+  --surface-strong: #323425;
+  --text: #f0e7d4;
+  --muted: #a8a884;
+  --primary: #a3c95c;
+  --primary-soft: #33381f;
+  --secondary: #e08257;
+  --border: #0e0f0a;
+  --accent: #e0a92e;
+  --on-accent: #1e1f16;
+  --halo: rgba(163, 201, 92, 0.14);
+  --panel: rgba(39, 41, 29, 0.96);
+  --header-bg: rgba(30, 31, 22, 0.92);
+  --panel-shadow: 6px 6px 0 rgba(0, 0, 0, 0.85);
+  --shadow: 5px 5px 0 rgba(0, 0, 0, 0.8);
+  --btn-bg: #a3c95c;
+  --btn-fg: #1e1f16;
+  --btn-shadow: 4px 4px 0 #0e0f0a;
+}
+
+/* --------------------------------------------------------------------------
    5. Re-skin the shared components
-   styles.css hard-codes warm orange surfaces, so every themed surface is
-   overridden here. The mobile nav panel is handled in its media query.
+   styles.css used to hard-code warm orange surfaces; they are now all tokens,
+   so the shared chrome below mostly confirms what the palette already set.
+   The mobile nav panel is handled in its media query.
    -------------------------------------------------------------------------- */
 
 html[data-theme] body {
@@ -1878,7 +1942,290 @@ html[data-theme='editorial'] .demo-quote__text {
 }
 
 /* --------------------------------------------------------------------------
-   13. Responsive
+   13. Character — ZeroFy (the live site and the Zlog)
+   The eight demos style .demo-* building blocks, which never appear on the
+   marketing pages. These are the same Retro character, applied to the real
+   page components: the paper ground, the heavy rules, the ink borders and
+   the hard offset shadows. Everything below reads tokens only, so the site
+   and the Zlog stay identical and follow light/dark on their own.
+   -------------------------------------------------------------------------- */
+
+/* The halftone dot ground, the same one the Zlog paints on its body. Every
+   section here has an opaque background, so the dots go on the sections. */
+html[data-theme='zerofy'] .section-light,
+html[data-theme='zerofy'] .section-dark,
+html[data-theme='zerofy'] .hero,
+html[data-theme='zerofy'] .page-hero,
+html[data-theme='zerofy'] .home-main {
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--halo) 2px, transparent 2px);
+  background-size: 16px 16px;
+}
+
+/* The hairline that used to separate the home page sections becomes a printed
+   double rule, the way the Zlog rules off its masthead and its share block. */
+html[data-theme='zerofy'] .home-main > section + section::before {
+  height: 0;
+  margin: calc(var(--home-gap) / 2) 0;
+  border-top: 3px double var(--border);
+  background: none;
+}
+
+/* --- Type ---------------------------------------------------------------- */
+
+html[data-theme='zerofy'] h1,
+html[data-theme='zerofy'] .section-heading h2 {
+  font-style: italic;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+html[data-theme='zerofy'] .section-heading h2,
+html[data-theme='zerofy'] .article-content h2,
+html[data-theme='zerofy'] .content-grid h2 {
+  padding-bottom: 0.7rem;
+  border-bottom: 3px double var(--border);
+}
+
+/* The eyebrow becomes a printed chip, the same shape as the Zlog kicker. */
+html[data-theme='zerofy'] .eyebrow {
+  display: inline-block;
+  /* .section-heading is a grid and .page-hero is a flex column, so without
+     these the chip would stretch to the full width of the section. */
+  align-self: flex-start;
+  justify-self: start;
+  width: auto;
+  margin-bottom: 1.1rem;
+  padding: 0.35rem 0.9rem;
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+}
+
+html[data-theme='zerofy'] .copy {
+  font-size: 1.08rem;
+}
+
+/* --- Cards --------------------------------------------------------------- */
+
+/* One treatment for every card on the site, so a service card, a link card
+   and a work card all read as the same printed block. */
+html[data-theme='zerofy'] .service-card,
+html[data-theme='zerofy'] .link-card,
+html[data-theme='zerofy'] .blog-card,
+html[data-theme='zerofy'] .process-step,
+html[data-theme='zerofy'] .contact-form,
+html[data-theme='zerofy'] .contact-info,
+html[data-theme='zerofy'] .work-card {
+  border: 2px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow);
+}
+
+html[data-theme='zerofy'] .service-card:hover,
+html[data-theme='zerofy'] .link-card:hover,
+html[data-theme='zerofy'] .blog-card:hover,
+html[data-theme='zerofy'] .work-card:hover {
+  transform: translate(-2px, -2px);
+  border-color: var(--border);
+  box-shadow: 7px 7px 0 var(--border);
+}
+
+html[data-theme='zerofy'] .service-card h3,
+html[data-theme='zerofy'] .process-step h3,
+html[data-theme='zerofy'] .link-card h3,
+html[data-theme='zerofy'] .blog-card h2,
+html[data-theme='zerofy'] .work-card__name {
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+html[data-theme='zerofy'] .step-number {
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: 3px 3px 0 var(--border);
+}
+
+/* --- Buttons ------------------------------------------------------------- */
+
+html[data-theme='zerofy'] .button {
+  border: 2px solid var(--border);
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+html[data-theme='zerofy'] .button:hover,
+html[data-theme='zerofy'] .button:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--border);
+}
+
+html[data-theme='zerofy'] .button-secondary:hover,
+html[data-theme='zerofy'] .button-secondary:focus-visible {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+/* --- Chips --------------------------------------------------------------- */
+
+/* The price banner and the work status flags become the same printed chip, so
+   they match the eyebrow and the Zlog kicker. */
+html[data-theme='zerofy'] .pricing-banner,
+html[data-theme='zerofy'] .work-card__status,
+html[data-theme='zerofy'] sup.footer-nav__badge {
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: 3px 3px 0 var(--border);
+}
+
+html[data-theme='zerofy'] .work-card__status--soon {
+  background: transparent;
+  color: var(--secondary);
+  box-shadow: none;
+}
+
+html[data-theme='zerofy'] .work-card__link {
+  border-bottom: 2px solid var(--primary);
+}
+
+/* --- Header, nav and footer ---------------------------------------------- */
+
+html[data-theme='zerofy'] .brand {
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+
+/* The mobile panel sits over the hero, and a translucent --panel lets the
+   headline and card text read through the links. This override has to live in
+   the responsive block at the end of the file, after the generic
+   `html[data-theme] .site-nav` rule, which carries the same specificity. */
+
+html[data-theme='zerofy'] .site-nav a::after,
+html[data-theme='zerofy'] .nav-dropdown-toggle::before {
+  height: 3px;
+}
+
+html[data-theme='zerofy'] .site-footer {
+  border-top: 3px double var(--border);
+  background-color: var(--surface-strong);
+  background-image: none;
+}
+
+html[data-theme='zerofy'] .footer-nav a {
+  letter-spacing: 0.04em;
+}
+
+html[data-theme='zerofy'] .company-name {
+  color: var(--primary);
+}
+
+/* --- Forms and overlays --------------------------------------------------- */
+
+html[data-theme='zerofy'] .contact-form input,
+html[data-theme='zerofy'] .contact-form textarea {
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--bg);
+}
+
+html[data-theme='zerofy'] .contact-form input:focus,
+html[data-theme='zerofy'] .contact-form textarea:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+html[data-theme='zerofy'] .cookie-banner__inner {
+  border: 2px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--panel);
+  box-shadow: var(--panel-shadow);
+}
+
+html[data-theme='zerofy'] .success-popup {
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--text);
+  color: var(--bg);
+  box-shadow: 5px 5px 0 var(--border);
+}
+
+html[data-theme='zerofy'] .loader-ring {
+  border-color: var(--primary-soft);
+  border-top-color: var(--primary);
+}
+
+/* --- Hero mockup ---------------------------------------------------------- */
+
+html[data-theme='zerofy'] .hero-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: 6px 6px 0 var(--border);
+}
+
+html[data-theme='zerofy'] .browser-window {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  box-shadow: none;
+}
+
+html[data-theme='zerofy'] .browser-top span {
+  border-radius: 0;
+  background: var(--secondary);
+}
+
+html[data-theme='zerofy'] .browser-top span:nth-child(2) {
+  background: var(--accent);
+}
+
+html[data-theme='zerofy'] .browser-top span:nth-child(3) {
+  background: var(--primary);
+}
+
+html[data-theme='zerofy'] .preview-panel {
+  background: var(--surface-strong);
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+}
+
+html[data-theme='zerofy'] .preview-panel h3,
+html[data-theme='zerofy'] .mini-card {
+  font-style: italic;
+}
+
+html[data-theme='zerofy'] .mini-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+}
+
+html[data-theme='zerofy'] .mini-card.accent {
+  background: var(--primary);
+  border-color: var(--border);
+  color: var(--btn-fg);
+}
+
+html[data-theme='zerofy'] .mini-bars span {
+  border-radius: 0;
+  background: var(--primary);
+}
+
+html[data-theme='zerofy'] .hero-card .card-tag {
+  padding-bottom: 0.4rem;
+  border-bottom: 3px double var(--border);
+}
+
+/* --------------------------------------------------------------------------
+   14. Responsive
    -------------------------------------------------------------------------- */
 
 @media (max-width: 720px) {
@@ -1890,6 +2237,16 @@ html[data-theme='editorial'] .demo-quote__text {
 
   html[data-theme='minimalism'] .demo-card {
     border-top: 1px solid var(--border);
+  }
+
+  /* The open mobile panel sits over the hero. A translucent --panel lets the
+     headline and card text read straight through the links, and the backdrop
+     blur cannot be relied on to hide it, so paint the panel with the opaque
+     surface instead. Declared after the generic rule above to win the cascade. */
+  html[data-theme='zerofy'] .site-nav {
+    background: var(--surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 

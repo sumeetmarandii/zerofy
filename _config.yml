@@ -1,0 +1,49 @@
+title: ZeroFy
+tagline: Simple website solutions for businesses and creators
+description: >-
+  ZeroFy builds fast, modern websites with easy deployment and reliable
+  maintenance for businesses and individuals. The Zlog covers website
+  strategy, design and deployment.
+author: Marandi Internet Private Limited
+
+# Custom domain, served by GitHub Pages from the `main` branch / root folder.
+url: https://zerofy.me
+baseurl: ""
+lang: en
+
+# The Zlog lives at /zlog/ and each post gets a dated permalink underneath it.
+permalink: /zlog/:year/:month/:day/:title/
+timezone: Asia/Kolkata
+
+# The Zlog posts are plain Markdown, so the blog needs no plugins at all, and
+# the rest of the site stays static HTML.
+
+# GitHub Pages builds the Zlog with its own pinned Jekyll. Nothing is added
+# beyond the gems below, which are both on the GitHub Pages whitelist, so the
+# build needs nothing that Pages cannot resolve.
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: zlog-post
+      author: ZeroFy
+      comments: false
+  - scope:
+      path: ""
+    values:
+      image: /assets/Zerofy.webp
+
+# Only the Zlog is rendered through Jekyll. Every other page is a hand-written
+# static HTML file with no front matter, so Jekyll copies it through as-is.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - log.md
+  - plan.md
+  - vendor
+  - node_modules
+  - .jekyll-cache
+  - .sass-cache

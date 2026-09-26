@@ -1,0 +1,105 @@
+---
+layout: zlog-base
+---
+{% assign words = content | number_of_words %}
+{% assign minutes = words | divided_by: 220 %}
+{% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
+
+{% comment %}
+  Share links. The URL and title are percent-encoded once here and reused by
+  every target, so a title containing "&" or "/" cannot break the query string.
+{% endcomment %}
+{% assign share_url = page.url | absolute_url %}
+{% assign share_enc_url = share_url | url_encode %}
+{% assign share_enc_title = page.title | default: site.title | url_encode %}
+
+<article class="zlog-article">
+  <header class="zlog-article__head">
+    <div class="container">
+      <p class="zlog-kicker">
+        <a href="{{ '/zlog/' | relative_url }}">The Zlog</a>
+      </p>
+      <h1 class="zlog-title">{{ page.title }}</h1>
+      <p class="zlog-article__meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d %B %Y' }}</time>
+        <span aria-hidden="true">&middot;</span>
+        <span>{{ minutes }} min read</span>
+        <span aria-hidden="true">&middot;</span>
+        <span>{{ page.author | default: site.author }}</span>
+      </p>
+      {% if page.tags.size > 0 %}
+        <ul class="zlog-tags">
+          {% for tag in page.tags %}
+            <li class="zlog-tag">{{ tag }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="zlog-prose article-content">
+      {{ content }}
+    </div>
+
+    <section class="zlog-share" aria-labelledby="zlog-share-heading">
+      <h2 class="zlog-share__heading" id="zlog-share-heading">Share this entry</h2>
+      <ul class="zlog-share__list">
+        <li>
+          <a class="zlog-share__btn" href="https://twitter.com/intent/tweet?url={{ share_enc_url }}&amp;text={{ share_enc_title }}" target="_blank" rel="noopener noreferrer">X</a>
+        </li>
+        <li>
+          <a class="zlog-share__btn" href="https://www.facebook.com/sharer/sharer.php?u={{ share_enc_url }}" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </li>
+        <li>
+          <a class="zlog-share__btn" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_enc_url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </li>
+        <li>
+          <a class="zlog-share__btn" href="https://wa.me/?text={{ share_enc_title }}%20{{ share_enc_url }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </li>
+        <li>
+          <a class="zlog-share__btn" href="https://www.reddit.com/submit?url={{ share_enc_url }}&amp;title={{ share_enc_title }}" target="_blank" rel="noopener noreferrer">Reddit</a>
+        </li>
+        <li>
+          <a class="zlog-share__btn" href="https://t.me/share/url?url={{ share_enc_url }}&amp;text={{ share_enc_title }}" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </li>
+        <li>
+          <a class="zlog-share__btn" href="mailto:?subject={{ share_enc_title }}&amp;body={{ share_enc_url }}">Email</a>
+        </li>
+        <li>
+          <button class="zlog-share__btn zlog-share__btn--copy" type="button"
+                  data-share-copy="{{ share_url }}"
+                  data-share-label="Copy link"
+                  data-share-copied="Link copied">Copy link</button>
+        </li>
+      </ul>
+    </section>
+
+    <nav class="zlog-postnav" aria-label="Post navigation">
+      {% if page.previous %}
+        <a class="zlog-postnav__link zlog-postnav__link--prev" href="{{ page.previous.url | relative_url }}">
+          <span class="zlog-postnav__dir">Previous entry</span>
+          <span class="zlog-postnav__title">{{ page.previous.title }}</span>
+        </a>
+      {% else %}
+        <span class="zlog-postnav__link is-empty" aria-hidden="true"></span>
+      {% endif %}
+
+      {% if page.next %}
+        <a class="zlog-postnav__link zlog-postnav__link--next" href="{{ page.next.url | relative_url }}">
+          <span class="zlog-postnav__dir">Next entry</span>
+          <span class="zlog-postnav__title">{{ page.next.title }}</span>
+        </a>
+      {% else %}
+        <a class="zlog-postnav__link zlog-postnav__link--next" href="{{ '/contact.html' | relative_url }}">
+          <span class="zlog-postnav__dir">That is all of them</span>
+          <span class="zlog-postnav__title">Ask us something</span>
+        </a>
+      {% endif %}
+    </nav>
+
+    <p class="zlog-back"><a href="{{ '/zlog/' | relative_url }}">&larr; Back to all Zlog entries</a></p>
+  </div>
+</article>
+
+<script src="{{ '/js/share.js' | relative_url }}"></script>

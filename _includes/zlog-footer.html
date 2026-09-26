@@ -1,0 +1,13 @@
+<footer class="site-footer zlog-footer">
+  <div class="container footer-inner">
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author }}. {{ site.title }}. {{ site.tagline }}.</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/about.html' | relative_url }}">About</a>
+      <a href="{{ '/zlog/' | relative_url }}" aria-current="page">Zlog <sup class="footer-nav__badge">New</sup></a>
+      <a href="{{ '/contact.html' | relative_url }}">Contact</a>
+      <a href="{{ '/terms.html' | relative_url }}">Terms &amp; Conditions</a>
+      <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a>
+    </nav>
+  </div>
+</footer>

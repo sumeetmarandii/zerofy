@@ -1,0 +1,40 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f0e7d4" />
+<title>{{ page.title }} | {{ site.title }}</title>
+{% assign meta_description = page.description | default: page.excerpt | default: site.description %}
+<meta name="description" content="{{ meta_description | strip_html | normalize_whitespace | truncate: 160 }}" />
+<link rel="canonical" href="{{ page.url | absolute_url }}" />
+
+<meta property="og:type" content="{% if page.layout == 'zlog-post' %}article{% else %}website{% endif %}" />
+<meta property="og:site_name" content="{{ site.title }}" />
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:description" content="{{ meta_description | strip_html | normalize_whitespace | truncate: 160 }}" />
+<meta property="og:url" content="{{ page.url | absolute_url }}" />
+<meta property="og:image" content="{{ page.image | default: '/assets/Zerofy.webp' | absolute_url }}" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="{{ '/favicon/favicon.ico' | relative_url }}" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon/favicon-32x32.png' | relative_url }}" />
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon/favicon-16x16.png' | relative_url }}" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/favicon/apple-touch-icon.png' | relative_url }}" />
+<link rel="manifest" href="{{ '/favicon/site.webmanifest' | relative_url }}" />
+
+<link rel="stylesheet" href="{{ '/css/styles.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/css/demo-themes.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/css/zlog.css' | relative_url }}" />
+<script>
+  // Resolve the saved colour mode before first paint so the page never flashes.
+  // The key is shared with the static pages and all eight demos, so the Zlog
+  // follows the same choice.
+  (function () {
+    var stored = null;
+    try {
+      stored = localStorage.getItem('zerofy-demo-mode');
+    } catch (error) {
+      stored = null;
+    }
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-mode', stored || (prefersDark ? 'dark' : 'light'));
+  })();
+</script>

@@ -230,6 +230,223 @@ html[data-theme='clay'][data-mode='dark'] {
 }
 
 /* --------------------------------------------------------------------------
+   4b. Palette — Retro (Demo Site 5)
+   Muted mustard, rust and cream on a 70s paper ground, heavy rules.
+   -------------------------------------------------------------------------- */
+
+html[data-theme='retro'] {
+  --bg: #f2e3c6;
+  --surface: #fbf2df;
+  --surface-strong: #e6cfa4;
+  --text: #2f2418;
+  --muted: #7a6446;
+  --primary: #c2571f;
+  --primary-soft: #f0d3a8;
+  --secondary: #5f7a4a;
+  --border: #2f2418;
+  --accent: #d9a521;
+  --halo: rgba(194, 87, 31, 0.14);
+  --panel: rgba(251, 242, 223, 0.96);
+  --header-bg: rgba(242, 227, 198, 0.92);
+  --panel-shadow: 6px 6px 0 rgba(47, 36, 24, 0.9);
+  --shadow: 5px 5px 0 rgba(47, 36, 24, 0.85);
+  --edge: 2px;
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-lg: 6px;
+  --btn-bg: #c2571f;
+  --btn-fg: #fbf2df;
+  --btn-shadow: 4px 4px 0 #2f2418;
+  --display-font: 'Georgia', 'Times New Roman', serif;
+  --body-font: 'Georgia', 'Times New Roman', serif;
+}
+
+html[data-theme='retro'][data-mode='dark'] {
+  --bg: #241b12;
+  --surface: #2f2418;
+  --surface-strong: #3d2f1f;
+  --text: #f2e3c6;
+  --muted: #b39b76;
+  --primary: #e8873f;
+  --primary-soft: #4a3520;
+  --secondary: #9dbb7d;
+  --border: #0f0b07;
+  --accent: #f0c04a;
+  --halo: rgba(232, 135, 63, 0.16);
+  --panel: rgba(47, 36, 24, 0.96);
+  --header-bg: rgba(36, 27, 18, 0.92);
+  --panel-shadow: 6px 6px 0 rgba(0, 0, 0, 0.85);
+  --shadow: 5px 5px 0 rgba(0, 0, 0, 0.8);
+  --btn-bg: #e8873f;
+  --btn-fg: #241b12;
+  --btn-shadow: 4px 4px 0 #0f0b07;
+}
+
+/* --------------------------------------------------------------------------
+   4c. Palette — Pop art (Demo Site 6)
+   Flat primaries, ink outlines, Ben-Day dots, no gradients in the chrome.
+   -------------------------------------------------------------------------- */
+
+html[data-theme='pop'] {
+  --bg: #fff23d;
+  --surface: #ffffff;
+  --surface-strong: #ffd633;
+  --text: #141414;
+  --muted: #4a4a4a;
+  --primary: #ff2e63;
+  --primary-soft: #ffd9e2;
+  --secondary: #00b3ff;
+  --border: #141414;
+  --accent: #7a2eff;
+  --halo: rgba(255, 46, 99, 0.2);
+  --panel: #ffffff;
+  --header-bg: #fff23d;
+  --panel-shadow: 8px 8px 0 #141414;
+  --shadow: 6px 6px 0 #141414;
+  --edge: 4px;
+  --r-sm: 0px;
+  --r-md: 0px;
+  --r-lg: 0px;
+  --btn-bg: #ff2e63;
+  --btn-fg: #ffffff;
+  --btn-shadow: 5px 5px 0 #141414;
+  --display-font: 'Inter', system-ui, -apple-system, sans-serif;
+  --body-font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html[data-theme='pop'][data-mode='dark'] {
+  --bg: #1b1030;
+  --surface: #2a1b48;
+  --surface-strong: #3b2770;
+  --text: #fff8e6;
+  --muted: #c4b3e8;
+  --primary: #ff5c85;
+  --primary-soft: #4a1f3d;
+  --secondary: #4dd4ff;
+  --border: #08040f;
+  --accent: #b98bff;
+  --halo: rgba(255, 92, 133, 0.2);
+  --panel: #2a1b48;
+  --header-bg: #1b1030;
+  --panel-shadow: 8px 8px 0 rgba(0, 0, 0, 0.9);
+  --shadow: 6px 6px 0 rgba(0, 0, 0, 0.85);
+  --btn-bg: #ff5c85;
+  --btn-fg: #1b1030;
+  --btn-shadow: 5px 5px 0 #08040f;
+}
+
+/* --------------------------------------------------------------------------
+   4d. Palette — Maximalism (Demo Site 7)
+   Everything at once: dense colour, stacked decoration, no empty space.
+   -------------------------------------------------------------------------- */
+
+html[data-theme='maximalism'] {
+  --bg: #1a1033;
+  --surface: #2b1a52;
+  --surface-strong: #3d2670;
+  --text: #fff6e9;
+  --muted: #c3b0ea;
+  --primary: #ffd23f;
+  --primary-soft: #4a3383;
+  --secondary: #ff4fa3;
+  --border: #ffd23f;
+  --accent: #35e0c4;
+  --halo: rgba(255, 210, 63, 0.22);
+  --panel: #2b1a52;
+  --header-bg: #1a1033;
+  --panel-shadow: 10px 10px 0 #ff4fa3, 20px 20px 0 #35e0c4;
+  --shadow: 8px 8px 0 #ff4fa3;
+  --edge: 3px;
+  --r-sm: 6px;
+  --r-md: 14px;
+  --r-lg: 26px;
+  --btn-bg: linear-gradient(120deg, #ffd23f, #ff4fa3 55%, #35e0c4);
+  --btn-fg: #1a1033;
+  --btn-shadow: 5px 5px 0 #ffd23f, 10px 10px 0 #ff4fa3;
+  --display-font: 'Inter', system-ui, -apple-system, sans-serif;
+  --body-font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html[data-theme='maximalism'][data-mode='dark'] {
+  --bg: #0d0722;
+  --surface: #1d0f42;
+  --surface-strong: #2c1a5c;
+  --text: #fff9ec;
+  --muted: #ab95dd;
+  --primary: #ffe066;
+  --primary-soft: #3a2670;
+  --secondary: #ff6fb8;
+  --border: #ffe066;
+  --accent: #4ff0d6;
+  --halo: rgba(255, 224, 102, 0.24);
+  --panel: #1d0f42;
+  --header-bg: #0d0722;
+  --panel-shadow: 10px 10px 0 #ff4fa3, 20px 20px 0 #35e0c4;
+  --shadow: 8px 8px 0 #ff4fa3;
+  --btn-bg: linear-gradient(120deg, #ffe066, #ff6fb8 55%, #4ff0d6);
+  --btn-fg: #0d0722;
+  --btn-shadow: 5px 5px 0 #ffe066, 10px 10px 0 #ff4fa3;
+}
+
+/* --------------------------------------------------------------------------
+   4e. Palette — Editorial (Demo Site 8)
+   Ink on warm paper, a single red rule, high-contrast serif headlines.
+   -------------------------------------------------------------------------- */
+
+html[data-theme='editorial'] {
+  --bg: #f7f4ee;
+  --surface: #ffffff;
+  --surface-strong: #ece6da;
+  --text: #16130f;
+  --muted: #6b6357;
+  --primary: #9b2226;
+  --primary-soft: #f2ded9;
+  --secondary: #2f4858;
+  --border: #16130f;
+  --accent: #9b2226;
+  --halo: rgba(155, 34, 38, 0.1);
+  --panel: rgba(255, 255, 255, 0.97);
+  --header-bg: rgba(247, 244, 238, 0.92);
+  --panel-shadow: 0 16px 40px rgba(22, 19, 15, 0.16);
+  --shadow: 0 2px 0 rgba(22, 19, 15, 0.9);
+  --edge: 1px;
+  --r-sm: 0px;
+  --r-md: 0px;
+  --r-lg: 0px;
+  --btn-bg: #9b2226;
+  --btn-fg: #ffffff;
+  --btn-shadow: none;
+  --display-font: Georgia, 'Times New Roman', serif;
+  --body-font: Georgia, 'Times New Roman', serif;
+}
+
+html[data-theme='editorial'][data-mode='dark'] {
+  --bg: #14110d;
+  --surface: #1e1a15;
+  --surface-strong: #2a251e;
+  --text: #f4efe6;
+  --muted: #a89c8a;
+  --primary: #e8564f;
+  --primary-soft: #3d211f;
+  --secondary: #7fa6bf;
+  --border: #f4efe6;
+  --accent: #e8564f;
+  --halo: rgba(232, 86, 79, 0.12);
+  --panel: rgba(30, 26, 21, 0.97);
+  --header-bg: rgba(20, 17, 13, 0.92);
+  --panel-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow: 0 2px 0 rgba(244, 239, 230, 0.85);
+  --btn-bg: #e8564f;
+  --btn-fg: #14110d;
+  --btn-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+   4f. Palette — Maximalism light/dark are both dark-on-colour by design;
+   the only difference is depth. Retro and Editorial stay paper-based.
+   -------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
    5. Re-skin the shared components
    styles.css hard-codes warm orange surfaces, so every themed surface is
    overridden here. The mobile nav panel is handled in its media query.
@@ -1417,6 +1634,247 @@ html[data-theme='clay'] .demo-hero::before {
   background: radial-gradient(circle at 35% 35%, var(--primary-soft), transparent 70%);
   opacity: 0.8;
   pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   12b. Character — Retro (Demo Site 5)
+   -------------------------------------------------------------------------- */
+
+html[data-theme='retro'] .demo-kicker {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  background: var(--accent);
+  color: #2f2418;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+html[data-theme='retro'] .demo-title {
+  font-style: italic;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+html[data-theme='retro'] .demo-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--halo) 2px, transparent 2px);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+
+html[data-theme='retro'] .demo-card {
+  box-shadow: var(--shadow);
+}
+
+html[data-theme='retro'] .demo-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 rgba(47, 36, 24, 0.85);
+}
+
+html[data-theme='retro'] .demo-tag {
+  border-width: 2px;
+  border-color: var(--border);
+  font-family: var(--display-font);
+  letter-spacing: 0.04em;
+}
+
+html[data-theme='retro'] .demo-heading {
+  padding-bottom: 0.7rem;
+  border-bottom: 3px double var(--border);
+}
+
+html[data-theme='retro'] .demo-swatch__chip {
+  border: 2px solid var(--border);
+  border-radius: var(--r-sm);
+  box-shadow: 3px 3px 0 rgba(47, 36, 24, 0.7);
+}
+
+/* --------------------------------------------------------------------------
+   12c. Character — Pop art (Demo Site 6)
+   -------------------------------------------------------------------------- */
+
+html[data-theme='pop'] .demo-kicker {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border: var(--edge) solid var(--border);
+  background: var(--secondary);
+  color: #141414;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 var(--border);
+  transform: rotate(-2deg);
+}
+
+html[data-theme='pop'] .demo-title {
+  text-transform: uppercase;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  text-shadow: 5px 5px 0 var(--secondary);
+}
+
+html[data-theme='pop'] .demo-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--border) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+html[data-theme='pop'] .demo-card {
+  border-width: var(--edge);
+  box-shadow: var(--shadow);
+}
+
+html[data-theme='pop'] .demo-card:hover {
+  transform: translate(-3px, -3px) rotate(-0.6deg);
+  box-shadow: 9px 9px 0 var(--border);
+}
+
+html[data-theme='pop'] .demo-step:nth-child(odd) {
+  background: var(--primary-soft);
+}
+
+html[data-theme='pop'] .demo-swatch__chip {
+  border: var(--edge) solid var(--border);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 var(--border);
+}
+
+html[data-theme='pop'] .demo-mode__btn {
+  border-width: var(--edge);
+  box-shadow: 3px 3px 0 var(--border);
+}
+
+/* --------------------------------------------------------------------------
+   12d. Character — Maximalism (Demo Site 7)
+   -------------------------------------------------------------------------- */
+
+html[data-theme='maximalism'] .demo-kicker {
+  display: inline-block;
+  padding: 0.45rem 1.1rem;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  color: #1a1033;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+html[data-theme='maximalism'] .demo-title {
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  text-shadow: 4px 4px 0 var(--secondary), 8px 8px 0 var(--accent);
+}
+
+html[data-theme='maximalism'] .demo-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(45deg, var(--halo) 0 12px, transparent 12px 24px),
+    repeating-linear-gradient(-45deg, rgba(53, 224, 196, 0.12) 0 12px, transparent 12px 24px);
+  pointer-events: none;
+}
+
+html[data-theme='maximalism'] .demo-card {
+  border-width: 2px;
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+html[data-theme='maximalism'] .demo-card:nth-child(2n) {
+  background: var(--surface-strong);
+}
+
+html[data-theme='maximalism'] .demo-card:hover {
+  transform: translateY(-6px) rotate(-0.8deg);
+  box-shadow: 12px 12px 0 var(--secondary), 22px 22px 0 var(--accent);
+}
+
+html[data-theme='maximalism'] .demo-tag {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+html[data-theme='maximalism'] .demo-stat__value {
+  color: var(--accent);
+  text-shadow: 3px 3px 0 var(--secondary);
+}
+
+html[data-theme='maximalism'] .demo-swatch__chip {
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 var(--secondary);
+}
+
+/* --------------------------------------------------------------------------
+   12e. Character — Editorial (Demo Site 8)
+   -------------------------------------------------------------------------- */
+
+html[data-theme='editorial'] .demo-kicker {
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--primary);
+  color: var(--primary);
+  font-family: var(--body-font);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+html[data-theme='editorial'] .demo-title {
+  font-style: italic;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+html[data-theme='editorial'] .demo-heading {
+  font-style: italic;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+html[data-theme='editorial'] .demo-card {
+  border-width: 0 0 1px;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+html[data-theme='editorial'] .demo-card:hover {
+  transform: none;
+  color: var(--primary);
+}
+
+html[data-theme='editorial'] .demo-tag {
+  border-color: var(--border);
+  border-radius: 0;
+  background: transparent;
+  font-family: var(--body-font);
+  letter-spacing: 0.06em;
+}
+
+html[data-theme='editorial'] .demo-stat__value {
+  font-style: italic;
+}
+
+html[data-theme='editorial'] .demo-swatch__chip {
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
+
+html[data-theme='editorial'] .demo-quote__text {
+  font-style: italic;
 }
 
 /* --------------------------------------------------------------------------

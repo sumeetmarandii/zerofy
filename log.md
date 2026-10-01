@@ -1,5 +1,12 @@
 # Update Log
 
+## 2026-10-01
+- Added a third Zlog entry, `relay`, announcing the launch of RELAY, the CRM at `relay.zerofy.me`. It embeds `assets/relay.webp` in a `<figure>` through `relative_url`, the same treatment as the Zlog launch entry and the Biller entry, so it needs no CSS or template changes. The source is 2000x2000, so the `img` carries explicit `width` and `height` plus `loading="lazy"` and `decoding="async"`.
+- Wrote the entry against the live marketing site rather than a brief: the positioning ("the signal without the software sprawl"), the three numbered modules (Know your people, See your stock, Move with intent), the three Relay standard principles (Make it obvious, Respect attention, Stay in motion), the `Start free` entry point, and the Jules Moreno testimonial are all quoted or paraphrased from `index.php` and `about.php` on the running site.
+- Stated the free tier and no more. Relay publishes no pricing, and there is no `/pricing` page to read one from, so the entry says so plainly rather than inventing tiers. This follows the same rule the Biller entry was written under.
+- Dated the entry `2026-10-01 12:00:00 +0530`, safely behind the current time, because Jekyll's `future: false` drops a future-dated post silently and still reports a successful build. At that time it sorts above the two 2026-09-26 entries, so it leads the index and `launching-the-zlog` becomes its "previous entry" link through the Biller entry in between.
+- Flipped the RELAY card on the home page from "Upcoming / Not live yet" to "Live" with a real visit link, matching the Biller card. The product is reachable now, so the old card was a dead end and the `work-card--soon` note claiming it was in development was no longer true. Left the work-grid comment in place: it still applies to the next upcoming build.
+
 ## 2026-09-27
 - Brought the main site and the Zlog under one shared **Avocado Harvest** theme. Added a `zerofy` palette and a theme block to `css/demo-themes.css`, covering oat cream, avocado green, harvest amber and brick red in both light and dark, and tokenized the core values in `css/styles.css`.
 - Applied `data-theme="zerofy"`, the theme stylesheet, the pre-paint mode resolver and the shared `zerofy-demo-mode` preference to `index.html`, `about.html`, `contact.html`, `terms.html`, `privacy.html`, `zorum.html` and `404.html`, and added a light/dark control to each header.
